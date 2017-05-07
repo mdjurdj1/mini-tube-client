@@ -10,7 +10,7 @@ export const headers = () => {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization': `Bearer: ${token}`,
-    'Access-Control-Allow-Origin': 'https://mysterious-brook-91422.herokuapp.com/'
+    'Access-Control-Allow-Origin': 'https://mini-tube-client.herokuapp.com/'
   }
 }
 
