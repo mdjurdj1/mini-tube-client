@@ -1,43 +1,80 @@
-import 'isomorphic-fetch'
-import { reset, SubmissionError } from 'redux-form'
-// ACTION CREATORS
+import { reset, SubmissionError } from 'redux-form';
+import ApiService from '../../../services/Api';
 
-export const authenticationRequest = () => {
-  return {
-    type: 'AUTHENTICATION_REQUEST'
-  }
-}
 
 export const setCurrentUser = (user) => {
   return {
     type: 'AUTHENTICATION_SUCCESS',
     user
+  };
+}
+
+export const authenticationRequest = () => {
+  return { type: 'AUTHENTICATION_REQUEST' };
+}
+
+export const logout = (router) => {
+  localStorage.removeItem('token');
+  router.history.replace('./login');
+  return { type: 'LOGOUT' };
+}
+
+export const authenticationFailure = (errors) => {
+  return { type: 'AUTHENTICATION_FAILURE', errors };
+}
+
+/**
+ * @param {Auth} async actions
+ */
+
+export const signup = (user, router) => {
+  return dispatch => {
+    dispatch(authenticationRequest());
+    return ApiService.post(`/users`, user)
+      .then(response => {
+        const { user, token } = response;
+        localStorage.setItem('token', JSON.stringify(token));
+        dispatch(setCurrentUser(user));
+        dispatch(reset('signup'));
+        router.history.replace('/dashboard');
+      })
+      .catch((err) => {
+        console.log(err)
+        throw new SubmissionError(err)
+      })
   }
 }
 
-//ASYNC ACTIONS
-
-export const signup = (userDetails, router) => {
+export const login = (user, router) => {
   return dispatch => {
-    dispatch(authenticationRequest())
-    return fetch('/users', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ user: userDetails })
-    })
-    .then(response => response.json())
-    .then(body => {
-      const slug = body.user.email.split("@")[0]
-      localStorage.setItem('mini.tube.token', body.token)
-      dispatch(setCurrentUser(body.user))
-      dispatch(reset('signup'))
-      router.history.replace(`/users/${slug}/profile`)
-    })
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
+    dispatch(authenticationRequest());
+    return ApiService.post(`/auth`, user)
+      .then(response => {
+        const { user, token } = response;
+        localStorage.setItem('token', JSON.stringify(token));
+        dispatch(setCurrentUser(user))
+        dispatch(reset('login'));
+        router.history.replace('/dashboard');
+      })
+      .catch((errors) => {
+        console.log(errors)
+        dispatch(authenticationFailure(errors))
+      })
   }
+}
+
+export const authenticate = () => {
+  return dispatch => {
+    dispatch(authenticationRequest());
+    return ApiService.post(`/auth/refresh`)
+      .then(response => {
+        const { user, token } = response;
+        localStorage.setItem('token', JSON.stringify(token));
+        dispatch(setCurrentUser(user));
+      })
+      .catch(() => {
+        localStorage.removeItem('token');
+        window.location = '/login';
+      });
+  };
 }

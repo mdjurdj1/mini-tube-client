@@ -5,13 +5,32 @@ import {
   Switch,
   Link
 } from 'react-router-dom'
+import { connect } from 'react-redux';
+
 
 import Home from '../views/Home'
 import Signup from '../views/Signup'
 import NotFound from '../views/NotFound'
 import Playlists from '../views/Playlists'
+import MatchAuthenticated from '../components/MatchAuthenticated/';
+import RedirectUnauthenticated from '../components/RedirectUnauthenticated/';
+import NestedMatchAuthenticated from '../components/NestedMatchAuthenticated/';
+import Errors from '../components/Errors';
+import { authenticate, authenticationFailure, logout } from '../redux/modules/Auth/actions';
+
+type Props = {
+  isAuthenticating: boolean,
+  isAuthenticated: boolean,
+  logout: () => void,
+  authenticate: () => void,
+  authenticationFailure: () => void,
+  errors: [],
+}
 
 class App extends Component {
+
+  props: props
+
   render() {
     return (
       <Router>
