@@ -5,19 +5,19 @@
 
   <testsuite name="auth-flow"
     errors="1" failures="1" hostname="" id="" package="auth-flow" skipped="1"
-    tests="2" time="1.592" timestamp="Sun, 07 May 2017 00:45:58 GMT">
+    tests="2" time="1.713" timestamp="Sun, 07 May 2017 01:26:54 GMT">
   
-    <testcase name="get to signup page" classname="auth-flow" time="1.592" assertions="3">
+    <testcase name="get to signup page" classname="auth-flow" time="1.713" assertions="3">
 
     
 
-      <failure message="Testing if element &lt;form&gt; has css class: &quot;signup_form&quot;. Element could not be located.">    at Object.module.exports.get to signup page (/home/mdjurdj1/code/mini-tube-client/tests/auth-flow.js:11:19)
+      <failure message="Testing if element &lt;#form&gt; has css class: &quot;signup_form&quot;. Element could not be located.">    at Object.module.exports.get to signup page (/home/mdjurdj1/code/mini-tube-client/tests/auth-flow.js:11:19)
     at _combinedTickCallback (internal/process/next_tick.js:67:7)</failure>
 
     
     </testcase>
       <system-err>
-        ERROR: Unable to locate element: &quot;form&quot; using: css selector
+        ERROR: Unable to locate element: &quot;#form&quot; using: css selector
     at command (/usr/lib/node_modules/nightwatch/lib/api/assertions/cssClassPresent.js:47:21)
     at module.exports.BaseAssertion._scheduleAssertion (/usr/lib/node_modules/nightwatch/lib/core/assertion.js:87:17)
     at module.exports.BaseAssertion._executeCommand (/usr/lib/node_modules/nightwatch/lib/core/assertion.js:82:17)

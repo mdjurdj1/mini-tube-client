@@ -19,9 +19,9 @@ class App extends Component {
         <nav className="uk-navbar-container navbar uk-navbar">
           <div className="uk-navbar-left">
             <ul className="uk-navbar-nav">
-              <li className="uk-active"><a href="Home">Mini-tube</a></li>
-              <li className="uk-parent"><a href="Signup">Signup</a></li>
-              <li className="uk-parent"><a href="Playlists">Playlists</a></li>
+              <li className="uk-active"><a href="/">Mini-tube</a></li>
+              <li className="uk-parent"><a href="/signup">Signup</a></li>
+              <li className="uk-parent"><a href="/playlists">Playlists</a></li>
             </ul>
           </div>
         </nav>

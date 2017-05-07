@@ -12,6 +12,7 @@ module.exports = {
   },
 
   'signup user and redirect to cart': (client) => {
-
+    client
+      .client.setValue('input[type=text]')
   }
 }
