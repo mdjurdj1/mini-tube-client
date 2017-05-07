@@ -12,7 +12,7 @@ const reducers = combineReducers({
   auth,
 })
 
-const middleware = {thunk}
+const middleware = [thunk]
 
 export default createStore(
   reducers,

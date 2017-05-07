@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
 //make this an environmental variable whenever possible const BASE_URL = process.env.REACT_APP_API_URL
-const BASE_URL = 'https://mysterious-brook-91422.herokuapp.com/'
+const BASE_URL = 'https://mysterious-brook-91422.herokuapp.com/api/v1'
 
 export const headers = () => {
 
@@ -10,7 +10,7 @@ export const headers = () => {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization': `Bearer: ${token}`,
-    'Access-Control-Allow-Origin': 'https://mini-tube-client.herokuapp.com/'
+    'Access-Control-Allow-Origin': 'https://mini-tube-client.herokuapp.com'
   }
 }
 

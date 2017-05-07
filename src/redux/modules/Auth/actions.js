@@ -23,9 +23,6 @@ export const authenticationFailure = (errors) => {
   return { type: 'AUTHENTICATION_FAILURE', errors };
 }
 
-/**
- * @param {Auth} async actions
- */
 
 export const signup = (user, router) => {
   return dispatch => {
