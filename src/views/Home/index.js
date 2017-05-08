@@ -8,7 +8,7 @@ render() {
       <div id="banner">
       <Grid>
         <Row id="home_container">
-          <Col xs={12} md={8} >
+          <Col xs={8} md={8} >
             <h1><span id="welcome">Welcome to </span><span id="mini-tube">Mini-Tube!</span></h1>
             <p className="text">A simple, minimally featured Youtube Browser.</p>
           </Col>
@@ -20,7 +20,7 @@ render() {
         </Row>
 
         <Row>
-          <Col xs={12} md={8} id="bufferCol">
+          <Col xs={12} md={12} id="bufferCol">
           </Col>
         </Row>
       </Grid>

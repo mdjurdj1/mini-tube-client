@@ -116,7 +116,7 @@ class SignupForm extends Component {
       </div>
       <div className="field">
         <p className="control">
-          <button type="submit" className="button is-success" disabled={pristine || submitting}>{ submitting ? 'Loading...' : 'Log in'}</button>
+          <button type="submit" className="button is-success" disabled={pristine || submitting}>{ submitting ? 'Loading...' : 'Sign Up'}</button>
         </p>
       </div>
     </form>

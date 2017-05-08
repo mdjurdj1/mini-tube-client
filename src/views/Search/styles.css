@@ -1,0 +1,7 @@
+.banner {
+  background-color: #000;
+  background-image: url(banner1.jpg);
+  background-position: center center, center top;
+  background-size: cover;
+  height: 130%
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import {Row, Col} from 'react-bootstrap'
 
 //import local modules
 import { signup } from '../../redux/modules/Auth/actions';
@@ -19,18 +20,18 @@ class Signup extends Component {
   render() {
 
     return (
-      <section className="section signup">
-        <div className="container">
-          <div>
-            <h1 className="title">Sign Up</h1>
-          </div>
-          <br />
+      <Row>
+        <Col sm={4} md={4} />
+        <Col sm={4} md={4} id="signup_box">
+          <h1>Join Mini-Tube today!</h1>
           <SignupForm onSubmit={this.handleSignup} />
-          <br />
-          <p><b>Already have an account?</b></p>
-          <NavLink to="/login">Log in</NavLink>
-        </div>
-      </section>
+
+          <hr />
+
+          <p>Already have an account?</p>
+          <NavLink to="/login">Login Here</NavLink>
+        </Col>
+      </Row>
     )
   }
 }

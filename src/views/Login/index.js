@@ -23,7 +23,7 @@ class Login extends Component {
     return (
       <Row>
         <Col sm={4} md={4} />
-        <Col sm={5} md={5} id="login_box">
+        <Col sm={4} md={4} id="login_box">
           <h1>Log in to Mini-Tube</h1>
           <LoginForm onSubmit={this.handleLogin} />
 
