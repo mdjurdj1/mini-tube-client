@@ -1,3 +1,16 @@
 .VideoSearchForm {
   text-align: center
 }
+
+.control-label {
+    font-size: 2em;
+    font-family: ‘Arial Black’, Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 0.2em black, 0 0 0.2em black;
+}
+
+
+#formInlineSearch {
+  width: 25em;
+}
