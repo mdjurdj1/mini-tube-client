@@ -9,7 +9,8 @@ export default class navbarInstance extends Component {
     <Navbar collapseOnSelect>
       <Navbar.Header>
         <Navbar.Brand>
-          <Glyphicon id='logo' glyph="play-circle"/>&nbsp;<a href="#">Mini-Tube</a>
+          <Glyphicon id='logo' glyph="play-circle"/>&nbsp;
+          <a onClick={ e => this.props.history.push("/") }>Mini-Tube</a>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
