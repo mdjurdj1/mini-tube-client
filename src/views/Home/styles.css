@@ -21,7 +21,7 @@
 
 #welcome {
   font-size: 2em;
-  color: orange;
+  color: white;
   text-shadow: 0 0 0.2em black, 0 0 0.2em black
 }
 
@@ -29,20 +29,21 @@
   font-size: 2em;
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-weight: bold;
-  color: orange;
+  color: white;
   text-shadow: 0 0 0.2em black, 0 0 0.2em black;
 }
 
 #new_here{
     font-weight: bold;
     opacity: 0.9;
+    color: white
 }
 
 .text {
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-weight: bold;
   font-size: 120%;
-  color: black;
+  color: white;
 }
 
 #bufferCol {
