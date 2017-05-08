@@ -60,7 +60,7 @@ class App extends Component {
         <NavigationWithRouter isAuthenticated={isAuthenticated} logout={logout} />
 
           <hr />
-          { !!errors ? <Errors errors={errors} /> : null }
+
           <Switch>
             <Route exact path="/" component={Home} />
             <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps}/>

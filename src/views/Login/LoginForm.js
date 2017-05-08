@@ -41,7 +41,7 @@ class LoginForm extends Component {
             type="submit"
             disabled={submitting}
           >
-            {submitting ? 'SIGNING IN...' : 'SIGN IN'}
+            {submitting ? 'LOGGING IN...' : 'LOG IN'}
           </Button>
         </Form>
       </div>

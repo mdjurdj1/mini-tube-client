@@ -33,7 +33,7 @@ export const signup = (user, router) => {
         localStorage.setItem('token', JSON.stringify(token));
         dispatch(setCurrentUser(user));
         dispatch(reset('signup'));
-        router.history.replace('/dashboard');
+        router.history.replace('/');
       })
       .catch((err) => {
         console.log(err)
@@ -51,7 +51,7 @@ export const login = (user, router) => {
         localStorage.setItem('token', JSON.stringify(token));
         dispatch(setCurrentUser(user))
         dispatch(reset('login'));
-        router.history.replace('/dashboard');
+        router.history.replace('/');
       })
       .catch((errors) => {
         console.log(errors)
