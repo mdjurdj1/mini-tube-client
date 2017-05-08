@@ -25,7 +25,8 @@ class navbarInstance extends Component {
         { this.props.currentUser.email ?
           <NavItem id="user_nav" eventKey={1} onClick={ e => this.props.history.push("/signup") }>
               <Glyphicon id="user" glyph="user"/>&nbsp;{this.props.currentUser.email}</NavItem> :
-          <NavItem eventKey={1} onClick={ e => this.props.history.push("/signup") }>Sign-up</NavItem>
+          <NavItem eventKey={1} onClick={ e => this.props.history.push("/login") }>Have an account? Log in!</NavItem>
+          // <NavItem eventKey={2} onClick={ e => this.props.history.push("/login") }>Login</NavItem>
         }
         </Nav>
       </Navbar.Collapse>
