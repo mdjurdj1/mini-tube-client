@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import Home from '../views/Home'
 import Signup from '../views/Signup'
 import NotFound from '../views/NotFound'
+import Search from '../views/Search'
 import Playlists from '../views/Playlists'
 import Dashboard from '../containers/Dashboard'
 
@@ -51,6 +52,7 @@ class App extends Component {
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/playlists" component={Playlists} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/search" component={Search} />
             <Route component={NotFound} />
           </Switch>
         </div>
