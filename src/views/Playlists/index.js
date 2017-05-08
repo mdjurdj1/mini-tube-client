@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import { getPlaylists } from '../../redux/modules/Playlists/actions';
+import { Button } from 'react-bootstrap'
 
 class Playlists extends Component {
 
@@ -10,11 +12,11 @@ class Playlists extends Component {
   render() {
     return (
       <div>
-        Playlists
+        <Button onClick={e=>this.props.getPlaylists(e)}>Get em</Button>
       </div>
     )
   }
 }
 
 
-export default Playlists
+export default connect(null, { getPlaylists } )(Playlists)
