@@ -12,6 +12,11 @@ import Home from '../views/Home'
 import Signup from '../views/Signup'
 import NotFound from '../views/NotFound'
 import Playlists from '../views/Playlists'
+import Dashboard from '../containers/Dashboard'
+
+import {withRouter} from 'react-router'
+import Navbar from '../components/Navbar'
+
 import MatchAuthenticated from '../components/MatchAuthenticated/';
 import RedirectUnauthenticated from '../components/RedirectUnauthenticated/';
 import NestedMatchAuthenticated from '../components/NestedMatchAuthenticated/';
@@ -27,6 +32,8 @@ type Props = {
   errors: [],
 }
 
+const NavigationWithRouter = withRouter(Navbar)
+
 class App extends Component {
 
   props: props
@@ -35,15 +42,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <nav className="uk-navbar-container navbar uk-navbar">
-          <div className="uk-navbar-left">
-            <ul className="uk-navbar-nav">
-              <li className="uk-active"><a href="/">Mini-tube</a></li>
-              <li className="uk-parent"><a href="/signup">Signup</a></li>
-              <li className="uk-parent"><a href="/playlists">Playlists</a></li>
-            </ul>
-          </div>
-        </nav>
+        <NavigationWithRouter />
 
           <hr />
 
@@ -51,6 +50,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/playlists" component={Playlists} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route component={NotFound} />
           </Switch>
         </div>
