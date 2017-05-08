@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 
 import Home from '../views/Home'
 import Signup from '../views/Signup'
+import Login from '../views/Login'
 import NotFound from '../views/NotFound'
 import Search from '../views/Search'
 import Playlists from '../views/Playlists'
@@ -37,9 +38,22 @@ const NavigationWithRouter = withRouter(Navbar)
 
 class App extends Component {
 
-  props: props
+  props: Props
+
+  componentDidMount() {
+   const token: string = localStorage.getItem('token');
+   if (token) {
+     console.log('Fetching a new token!');
+     this.props.authenticate();
+   } else {
+     this.props.authenticationFailure();
+   }
+ }
 
   render() {
+    const { isAuthenticated, isAuthenticating, currentUser, logout, errors } = this.props;
+    const authProps = { isAuthenticated, isAuthenticating, currentUser };
+
     return (
       <Router>
         <div className="App">
@@ -49,10 +63,11 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/playlists" component={Playlists} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/search" component={Search} />
+            <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps}/>
+            <MatchAuthenticated exact path="/dashboard" component={Dashboard} {...authProps}/>
+            <MatchAuthenticated exact path="/search" component={Search} {...authProps} />
+            <RedirectUnauthenticated path="/login" exact component={Login} {...authProps} />
+            <RedirectUnauthenticated path="/signup" exact component={Signup} {...authProps} />
             <Route component={NotFound} />
           </Switch>
         </div>
@@ -61,4 +76,11 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(
+  state => ({
+    isAuthenticating: state.auth.isAuthenticating,
+    isAuthenticated: state.auth.isAuthenticated,
+    currentUser: state.auth.currentUser,
+    errors: state.auth.errors
+  }), { logout, authenticate, authenticationFailure }
+)(App);

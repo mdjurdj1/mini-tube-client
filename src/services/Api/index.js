@@ -5,7 +5,7 @@ const BASE_URL = 'https://mysterious-brook-91422.herokuapp.com/api/v1'
 
 export const headers = () => {
 
-  const token = JSON.parse(localStorage.getItem('mini.tube.token'));
+  const token = JSON.parse(localStorage.getItem('token'));
   return {
     'Accept': 'application/json',
     'Content-Type': 'application/json',

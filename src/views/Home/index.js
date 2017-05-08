@@ -5,7 +5,7 @@ const Home = () =>
 
 <div>
 <h1>GAME OF JONES</h1>
-<img id="hey" src='http://media.wwg.com/2017/04/marvel-vs-capcom-infinite-8-207902.jpg' />
+<img id="hey" src='http://vignette2.wikia.nocookie.net/degrassi/images/4/4c/Toby-the-office-nbc.jpg/revision/latest?cb=20130910201716' />
 </div>
 
 
