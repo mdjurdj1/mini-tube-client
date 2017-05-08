@@ -5,8 +5,8 @@ h1 {
 img {
   display: block;
   margin: 0 auto;
-  width: 600px;
-  height: 400px
+  width: 40%;
+  height: 40%
 }
 
 img:hover {

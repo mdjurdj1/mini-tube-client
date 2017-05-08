@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Navbar, Nav, NavItem, Glyphicon} from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap';
-import { Link } from 'react-router';
+// import { LinkContainer } from 'react-router-bootstrap';
+// import { Link } from 'react-router';
 import { connect } from 'react-redux'
 import './styles.css'
 
