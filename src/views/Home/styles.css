@@ -2,6 +2,13 @@
     text-align: center;
 }*/
 
+#banner {
+  background-color: #000;
+  background-image: url(LightBlueBanner.jpg);
+  background-position: center center, center top;
+  background-size: cover;
+  height: 130%
+}
 #mini-tube {
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-weight: bold;

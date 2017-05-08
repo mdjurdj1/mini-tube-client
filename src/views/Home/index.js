@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import { Col, Grid, Row, Button } from 'react-bootstrap'
-import './style.css'
+import './styles.css'
 
 class Home extends Component {
 render() {
   return (
+      <div>
       <Grid>
         <Row>
           <Col xs={12} md={8} >
@@ -17,7 +18,14 @@ render() {
             <Button bsStyle="primary" bsSize="large" block onClick={e => this.props.history.push("/signup")} >Sign Up</Button>
           </Col>
         </Row>
+
+        <Row>
+          <Col xs={12} md={8}>
+          <p /><p /><p /><p /><p /><p /><p /><p /><p /><p />
+          </Col>
+        </Row>
       </Grid>
+      </div>
     )
   }
 }
