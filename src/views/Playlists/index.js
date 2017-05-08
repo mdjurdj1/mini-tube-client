@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
 
-const Playlists = () =>
-  <div>
-  Playlsits
-  </div>
+class Playlists extends Component {
+
+  componentWillMount() {
+    //fetch a user's playlists
+  }
+
+  render() {
+    return (
+      <div>
+        Playlists
+      </div>
+    )
+  }
+}
 
 
 export default Playlists
