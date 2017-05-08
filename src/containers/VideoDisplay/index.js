@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Video from '../../components/Video'
 import {connect} from 'react-redux'
+import './style.css'
 
 
 class VideoList extends Component {
@@ -12,7 +13,7 @@ class VideoList extends Component {
     })
 
     return (
-      <div>
+      <div id="video_container">
       {videos}
       </div>
     )

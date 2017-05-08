@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Form, FormControl, FormGroup, ControlLabel, Button, Glyphicon } from 'react-bootstrap'
 import * as actions from '../../redux/modules/Video/actions'
+import './style.css'
 
 class VideoSearchForm extends Component {
   constructor(props) {
