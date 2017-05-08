@@ -57,10 +57,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <NavigationWithRouter />
+        <NavigationWithRouter isAuthenticated={isAuthenticated} logout={logout} />
 
           <hr />
-
+          { !!errors ? <Errors errors={errors} /> : null }
           <Switch>
             <Route exact path="/" component={Home} />
             <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps}/>
