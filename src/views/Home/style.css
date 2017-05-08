@@ -1,5 +1,18 @@
-h1 {
+/*h1 {
     text-align: center;
+}*/
+
+#mini-tube {
+  font-family: ‘Arial Black’, Gadget, sans-serif;
+  font-weight: bold;
+  color: #45ADE9
+}
+
+.text {
+  font-family: ‘Arial Black’, Gadget, sans-serif;
+  font-weight: bold;
+  font-size: 110%;
+  color: #45ADE9
 }
 
 img {
