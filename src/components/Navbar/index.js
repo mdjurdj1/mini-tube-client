@@ -11,6 +11,19 @@ type Props = {
 }
 
 class navbarInstance extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  static contextTypes = {
+    router: PropTypes.object,
+  }
+
+  props: Props
+
+  handleLogout() {
+    this.props.logout(this.context.router);
+  }
 
   render() {
     const currentEmail =
@@ -33,7 +46,7 @@ class navbarInstance extends Component {
         <Nav pullRight>
         { this.props.currentUser.email ?
           <NavDropdown eventKey={3} title={currentEmail} id="basic-nav-dropdown">
-            <NavItem eventKey={1} onClick={ e => this.props.handleLogout() }>
+            <NavItem eventKey={1} onClick={ e => this.handleLogout(e) }>
               <Glyphicon glyph="log-out"/>&nbsp;Logout</NavItem>
           </NavDropdown> :
           <NavItem eventKey={1} onClick={ e => this.props.history.push("/login") }>Have an account? Log in!</NavItem>
