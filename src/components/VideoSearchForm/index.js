@@ -35,7 +35,6 @@ class VideoSearchForm extends Component {
                 onChange={(e)=>this.handleChange(e)}
                 type="text"
                 placeholder="Hydraulic Press..."
-                bsSize="md"
               />
             <Button type='submit'><Glyphicon glyph="search"/></Button>
           </FormGroup>

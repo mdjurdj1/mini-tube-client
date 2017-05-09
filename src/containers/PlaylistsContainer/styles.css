@@ -6,10 +6,11 @@ h1 {
 }
 
 #playlists_container {
+    margin-top: 2em;
     padding-top: 2em;
-    padding-left: 5em;
-    padding-bottom: 3em;
-    padding-right: 5em;
+    padding-left: 2em;
+    padding-bottom: 2em;
+    padding-right: 2em;
     border: #cdcdcd medium solid;
     border-radius: 10px;
     -moz-border-radius: 10px;
