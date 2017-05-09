@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Row, Col} from 'react-bootstrap'
 import { getPlaylist } from '../../redux/modules/Playlists/actions';
 
 class Playlist extends Component {
@@ -11,16 +12,21 @@ class Playlist extends Component {
 
   render() {
     return (
-      <div>
-      {this.props.playlist ? 'hey'
+      <div className="banner">
+        <Row>
+          <Col xs={12} md={12} id="bufferCol">
+          {this.props.playlist ?
+            <h1>{this.props.playlist.name}</h1>
 
-      : 'ay'}
+          : 'No Playlist was found.'}
+          </Col>
+        </Row>
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return { playlist: state.playlists.playlist[0] }
+  return { playlist: state.playlists.playlist }
 }
 export default connect(mapStateToProps, { getPlaylist })(Playlist)
