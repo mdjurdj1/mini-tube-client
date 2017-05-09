@@ -16,3 +16,24 @@ export const getPlaylists = () => {
       })
   }
 }
+
+export const createPlaylist = (playlist) => {
+  return {
+    type: 'CREATE_REQUEST_SUCCESS',
+    playlist
+  };
+}
+
+export const createPlaylistRequest = (name) => {
+  return dispatch => {
+    dispatch({type: 'PROCESSING_CREATE'})
+    return ApiService.post(`/playlists`, name)
+    .then(response => {
+      dispatch(createPlaylist(response))
+    })
+    .catch((err) => {
+      console.log(err)
+      throw new SubmissionError(err)
+    })
+  }
+}

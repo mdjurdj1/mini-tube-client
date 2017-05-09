@@ -15,7 +15,7 @@ class PlaylistCreateForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.actions.createPlaylist(`${this.state.input}`)
+    this.props.actions.createPlaylistRequest(`${this.state.input}`)
   }
 
   handleChange(e) {
@@ -29,14 +29,14 @@ class PlaylistCreateForm extends Component {
       <div className="PlaylistCreateForm">
         <Form inline onSubmit={(e)=>this.handleSubmit(e)}>
           <FormGroup controlId="formInlineSearch">
-            <ControlLabel>Search</ControlLabel> &nbsp;
+            <ControlLabel></ControlLabel> &nbsp;
               <FormControl
                 value={this.state.input}
                 onChange={(e)=>this.handleChange(e)}
                 type="text"
                 placeholder="Playlist name..."
               />
-            <Button type='submit'><Glyphicon glyph="search"/></Button>
+            <Button type='submit'>Create Playlist</Button>
           </FormGroup>
         </Form>
       </div>

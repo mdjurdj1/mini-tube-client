@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { getPlaylists } from '../../redux/modules/Playlists/actions';
 import { Button } from 'react-bootstrap'
 
+import PlaylistCreateForm from '../../components/PlaylistCreateForm'
+
 class Playlists extends Component {
 
   componentWillMount() {
@@ -12,6 +14,7 @@ class Playlists extends Component {
   render() {
     return (
       <div>
+        <PlaylistCreateForm />
         <Button onClick={e=>this.props.getPlaylists(e)}>Get em</Button>
       </div>
     )
