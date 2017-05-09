@@ -26,17 +26,31 @@ export const addPlaylist = (playlist) => {
 
 export const deletePlaylist = (id) => {
   return {
-    type: 'deletePlaylist',
+    type: 'DELETE_PLAYLIST',
     id: id
   }
 }
 
 export const createPlaylistRequest = (name) => {
   return dispatch => {
-    dispatch({type: 'PROCESSING_CREATE'})
+    dispatch({type: 'PROCESSING_ACTION'})
     return ApiService.post(`/playlists`, {playlist: {name: name}} )
     .then(response => {
       dispatch(addPlaylist(response))
+    })
+    .catch((err) => {
+      console.log(err)
+      throw new SubmissionError(err)
+    })
+  }
+}
+
+export const deletePlaylistRequest = (id) => {
+  return dispatch => {
+    dispatch({type: 'PROCESSING_ACTION'})
+    return ApiService.delete(`/playlists/${id}`)
+    .then(response => {
+      dispatch(deletePlaylist(response))
     })
     .catch((err) => {
       console.log(err)

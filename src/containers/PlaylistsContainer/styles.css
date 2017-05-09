@@ -23,3 +23,7 @@ h1 {
   font-weight: bold;
   color: #45ADE9
 }
+
+.playlist_delete_glyph {
+  float: right;
+}

@@ -6,7 +6,7 @@ export default function playlistsReducer(state={loading: false, playlists: []}, 
       return {...state, loading: true}
     case 'FETCH_PLAYLISTS':
       return {loading: false, playlists: [].concat(action.payload) }
-    case 'PROCESSING_CREATE':
+    case 'PROCESSING_ACTION':
       return {...state, loading: true}
     case 'ADD_PLAYLIST':
       return {...state, loading: false, playlists: state.playlists.concat(action.payload)}

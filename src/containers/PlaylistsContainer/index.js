@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Col, Glyphicon } from 'react-bootstrap'
-import { getPlaylists } from '../../redux/modules/Playlists/actions';
+import { getPlaylists, deletePlaylistRequest } from '../../redux/modules/Playlists/actions';
 import './styles.css'
 
 class PlaylistsContainer extends Component {
@@ -11,6 +11,10 @@ class PlaylistsContainer extends Component {
     this.props.getPlaylists()
   }
 
+  handleClick(playlist_id) {
+    console.log(playlist_id)
+    this.props.deletePlaylistRequest(playlist_id)
+  }
 
   render() {
 
@@ -22,6 +26,11 @@ class PlaylistsContainer extends Component {
               <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;&nbsp;
               {playlist.name}
             </Link>
+            <span
+              onClick={() => {if(confirm('Delete this playlist?')) {this.handleClick(playlist.id)};}}
+              >
+              <Glyphicon glyph="remove" className='playlist_delete_glyph'/>
+              </span>
           <hr />
         </div>
       )
@@ -39,4 +48,4 @@ function mapStateToProps(state) {
   return { playlists: state.playlists.playlists }
 }
 
-export default connect(mapStateToProps, { getPlaylists })(PlaylistsContainer)
+export default connect(mapStateToProps, { getPlaylists, deletePlaylistRequest })(PlaylistsContainer)
