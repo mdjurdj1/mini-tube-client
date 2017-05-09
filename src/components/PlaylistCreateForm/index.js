@@ -15,7 +15,7 @@ class PlaylistCreateForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.actions.createPlaylistRequest(`${this.state.input}`)
+    this.props.actions.createPlaylistRequest(this.state.input)
   }
 
   handleChange(e) {

@@ -27,7 +27,7 @@ export const createPlaylist = (playlist) => {
 export const createPlaylistRequest = (name) => {
   return dispatch => {
     dispatch({type: 'PROCESSING_CREATE'})
-    return ApiService.post(`/playlists`, name)
+    return ApiService.post(`/playlists`, {playlist: {name: name}} )
     .then(response => {
       dispatch(createPlaylist(response))
     })
