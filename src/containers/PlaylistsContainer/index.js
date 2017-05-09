@@ -2,16 +2,22 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Col, Glyphicon } from 'react-bootstrap'
+import { getPlaylists } from '../../redux/modules/Playlists/actions';
 import './styles.css'
 
 class PlaylistsContainer extends Component {
+
+  componentWillMount() {
+    this.props.getPlaylists()
+  }
+
   render() {
 
     const playlists = this.props.playlists.map((playlist, index) => {
       return (
         <div key={index}>
           <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;
-          <Link to={`/playlists/${playlist.id}`} activeClassName="active">{playlist.name}</Link>
+          <Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>
           <hr />
         </div>
       )
@@ -28,4 +34,5 @@ class PlaylistsContainer extends Component {
 function mapStateToProps(state) {
   return { playlists: state.playlists.playlists }
 }
-export default connect(mapStateToProps)(PlaylistsContainer)
+
+export default connect(mapStateToProps, { getPlaylists })(PlaylistsContainer)

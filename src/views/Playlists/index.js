@@ -9,7 +9,7 @@ import PlaylistsContainer from '../../containers/PlaylistsContainer'
 class Playlists extends Component {
 
   componentWillMount() {
-    //fetch a user's playlists
+    this.props.getPlaylists
   }
 
   render() {
