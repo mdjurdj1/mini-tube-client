@@ -11,7 +11,7 @@ export default function playlistsReducer(state={loading: false, playlists: []}, 
     case 'ADD_PLAYLIST':
       return {...state, loading: false, playlists: state.playlists.concat(action.payload)}
     case 'DELETE_PLAYLIST':
-      const index = state.playlists.findIndex(p => p.id == action.id)
+      const index = state.playlists.findIndex(p => p.id === action.id)
       const newPlaylist = [].concat(state.playlists)
       newPlaylist.splice(index, 1)
       return {...state, playlists: newPlaylist}

@@ -11,9 +11,6 @@ type Props = {
 }
 
 class navbarInstance extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   static contextTypes = {
     router: PropTypes.object,

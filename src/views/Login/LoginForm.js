@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Col } from 'react-bootstrap'
 import './styles.css'
 
 type Props = {
