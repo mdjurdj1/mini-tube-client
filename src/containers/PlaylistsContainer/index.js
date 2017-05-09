@@ -11,13 +11,17 @@ class PlaylistsContainer extends Component {
     this.props.getPlaylists()
   }
 
+
   render() {
 
     const playlists = this.props.playlists.map((playlist, index) => {
       return (
-        <div key={index}>
-          <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;
-          <Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>
+        <div key={index} className="playlist_div">
+          &nbsp;&nbsp;&nbsp;
+            <Link to={`/playlists/${playlist.id}`}>
+              <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;&nbsp;
+              {playlist.name}
+            </Link>
           <hr />
         </div>
       )

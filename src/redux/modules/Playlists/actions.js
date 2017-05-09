@@ -20,7 +20,7 @@ export const getPlaylists = () => {
 export const addPlaylist = (playlist) => {
   return {
     type: 'ADD_PLAYLIST',
-    payload: playlist
+    payload: playlist.playlist
   };
 }
 
