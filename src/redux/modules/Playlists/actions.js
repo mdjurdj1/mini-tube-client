@@ -7,7 +7,7 @@ export const getPlaylists = () => {
     dispatch({type: 'LOADING_PLAYLISTS'});
     return ApiService.get(`/playlists`)
       .then(response => {
-        const { playlists } = response;
+        const playlists = response;
         dispatch({type: 'FETCH_PLAYLISTS', playlists })
       })
       .catch((err) => {
