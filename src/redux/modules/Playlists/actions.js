@@ -8,7 +8,7 @@ export const getPlaylists = () => {
     return ApiService.get(`/playlists`)
       .then(response => {
         const playlists = response;
-        dispatch({type: 'FETCH_PLAYLISTS', playlists })
+        dispatch({type: 'FETCH_PLAYLISTS', payload: playlists })
       })
       .catch((err) => {
         console.log(err)
