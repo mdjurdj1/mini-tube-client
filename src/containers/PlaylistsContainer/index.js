@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { Row, Col, Glyphicon } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { Col, Glyphicon } from 'react-bootstrap'
 import './styles.css'
 
 class PlaylistsContainer extends Component {
@@ -8,8 +9,9 @@ class PlaylistsContainer extends Component {
 
     const playlists = this.props.playlists.map((playlist, index) => {
       return (
-        <div>
-          <Glyphicon glyph="equalizer" id='playlist_glyph'/> {playlist.name}
+        <div key={index}>
+          <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;
+          <Link to={`/playlists/${playlist.id}`} activeClassName="active">{playlist.name}</Link>
           <hr />
         </div>
       )
@@ -18,7 +20,7 @@ class PlaylistsContainer extends Component {
     return (
       <Col sm={4} md={4} mdOffset={4} id="playlists_container">
         {playlists}
-      </Col> 
+      </Col>
     )
   }
 }
