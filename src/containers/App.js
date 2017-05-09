@@ -13,6 +13,7 @@ import Signup from '../views/Signup'
 import Login from '../views/Login'
 import NotFound from '../views/NotFound'
 import Search from '../views/Search'
+import Playlist from '../views/Playlist'
 import Playlists from '../views/Playlists'
 import Dashboard from '../containers/Dashboard'
 
@@ -63,7 +64,8 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={Home} />
-            <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps}/>
+            <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps} />
+            <MatchAuthenticated path="/playlists/:id" component={Playlist} {...authProps} />
             <MatchAuthenticated exact path="/dashboard" component={Dashboard} {...authProps}/>
             <MatchAuthenticated exact path="/search" component={Search} {...authProps} />
             <RedirectUnauthenticated path="/login" exact component={Login} {...authProps} />
