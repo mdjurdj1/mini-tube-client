@@ -5,7 +5,7 @@ export default function playlistsReducer(state={loading: false, playlists: []}, 
     case 'LOADING_PLAYLISTS':
       return {...state, loading: true}
     case 'FETCH_PLAYLISTS':
-      return {loading: false, playlists: action.payload}
+      return {loading: false, playlists: [...state.playlists, ...action.payload]}
     default:
       return state
   }
