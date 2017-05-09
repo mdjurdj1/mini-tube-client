@@ -4,6 +4,7 @@ import { getPlaylists } from '../../redux/modules/Playlists/actions';
 import { Button } from 'react-bootstrap'
 
 import PlaylistCreateForm from '../../components/PlaylistCreateForm'
+import PlaylistsContainer from '../../containers/PlaylistsContainer'
 
 class Playlists extends Component {
 
@@ -15,6 +16,7 @@ class Playlists extends Component {
     return (
       <div>
         <PlaylistCreateForm />
+        <PlaylistsContainer />
         <Button onClick={e=>this.props.getPlaylists(e)}>Get em</Button>
       </div>
     )

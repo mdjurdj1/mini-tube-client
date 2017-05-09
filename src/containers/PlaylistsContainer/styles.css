@@ -1,0 +1,17 @@
+h1 {
+  font-family: ‘Arial Black’, Gadget, sans-serif;
+  font-weight: bold;
+  font-size: 150%;
+  color: #45ADE9
+}
+
+#playlists_container {
+    padding-top: 2em;
+    padding-left: 5em;
+    padding-bottom: 3em;
+    padding-right: 5em;
+    border: #cdcdcd medium solid;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}

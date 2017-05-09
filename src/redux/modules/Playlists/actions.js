@@ -17,10 +17,10 @@ export const getPlaylists = () => {
   }
 }
 
-export const createPlaylist = (playlist) => {
+export const addPlaylist = (playlist) => {
   return {
-    type: 'CREATE_REQUEST_SUCCESS',
-    playlist
+    type: 'ADD_PLAYLIST',
+    payload: playlist
   };
 }
 
@@ -29,7 +29,7 @@ export const createPlaylistRequest = (name) => {
     dispatch({type: 'PROCESSING_CREATE'})
     return ApiService.post(`/playlists`, {playlist: {name: name}} )
     .then(response => {
-      dispatch(createPlaylist(response))
+      dispatch(addPlaylist(response))
     })
     .catch((err) => {
       console.log(err)
