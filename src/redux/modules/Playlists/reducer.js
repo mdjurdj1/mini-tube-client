@@ -2,6 +2,8 @@ export default function playlistsReducer(state={loading: false, playlists: []}, 
   switch(action.type) {
     // case 'LOADING_VIDS':
     //   return {...state, loading: true}
+    case 'LOADING_PLAYLISTS':
+      return {...state, loading: true}
     case 'FETCH_PLAYLISTS':
       return {loading: false, playlists: action.payload}
     default:
