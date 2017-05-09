@@ -24,6 +24,13 @@ export const addPlaylist = (playlist) => {
   };
 }
 
+export const deletePlaylist = (id) => {
+  return {
+    type: 'deletePlaylist',
+    id: id
+  }
+}
+
 export const createPlaylistRequest = (name) => {
   return dispatch => {
     dispatch({type: 'PROCESSING_CREATE'})
