@@ -1,11 +1,15 @@
-export default function playlistsReducer(state={loading: false, playlists: []}, action) {
+export default function playlistsReducer(state={loading: false, playlists: [], playlist: []}, action) {
   switch(action.type) {
     // case 'LOADING_VIDS':
     //   return {...state, loading: true}
     case 'LOADING_PLAYLISTS':
       return {...state, loading: true}
+    case 'LOADING_PLAYLIST':
+      return {...state, loading: true}
     case 'FETCH_PLAYLISTS':
       return {loading: false, playlists: [].concat(action.payload) }
+    case 'FETCH_PLAYLIST':
+      return {loading: false, playlist: [].concat(action.payload) }
     case 'PROCESSING_ACTION':
       return {...state, loading: true}
     case 'ADD_PLAYLIST':

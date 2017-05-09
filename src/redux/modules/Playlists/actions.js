@@ -16,6 +16,21 @@ export const getPlaylists = () => {
   }
 }
 
+export const getPlaylist = (id) => {
+  return dispatch => {
+    dispatch({type: 'LOADING_PLAYLIST'});
+    return ApiService.get(`/playlists/${id}`)
+      .then(response => {
+        const playlist = response;
+        dispatch({type: 'FETCH_PLAYLIST', payload: playlist })
+      })
+      .catch((err) => {
+        console.log(err)
+        throw new SubmissionError(err)
+      })
+  }
+}
+
 export const addPlaylist = (playlist) => {
   return {
     type: 'ADD_PLAYLIST',
