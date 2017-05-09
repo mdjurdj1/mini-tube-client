@@ -50,7 +50,8 @@ export const deletePlaylistRequest = (id) => {
     dispatch({type: 'PROCESSING_ACTION'})
     return ApiService.delete(`/playlists/${id}`)
     .then(response => {
-      dispatch(deletePlaylist(response))
+      dispatch(deletePlaylist(id))
+      console.log('successfully deleted playlist')
     })
     .catch((err) => {
       console.log(err)
