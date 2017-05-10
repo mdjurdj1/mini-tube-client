@@ -21,8 +21,12 @@ export const getPlaylist = (id) => {
     dispatch({type: 'LOADING_PLAYLIST'});
     return ApiService.get(`/playlists/${id}`)
       .then(response => {
-        const playlist = response.playlist;
-        dispatch({type: 'FETCH_PLAYLIST', payload: playlist })
+        if(response) {
+          const playlist = response.playlist;
+          dispatch({type: 'FETCH_PLAYLIST', payload: playlist })
+        } else {
+          dispatch({type: 'FAILURE'})
+        }
       })
       .catch((err) => {
         console.log(err)

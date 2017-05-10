@@ -1,27 +1,37 @@
 import React, {Component} from 'react'
+import { browserHistory } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {Row, Col} from 'react-bootstrap'
 import { getPlaylist } from '../../redux/modules/Playlists/actions';
+import './styles.css'
 
 class Playlist extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      playlist: {
+        name: "Playlist not found."
+      }
+    }
+  }
 
-  componentWillMount() {
+  componentDidMount() {
     let id = this.props.match.params.id
     this.props.getPlaylist(id)
   }
 
+
   render() {
     return (
-      <div className="banner">
-        <Row>
-          <Col xs={12} md={12} id="bufferCol">
-          {this.props.playlist ?
-            <h1>{this.props.playlist.name}</h1>
-
-          : 'No Playlist was found.'}
-          </Col>
-        </Row>
-      </div>
+    <div>
+        <div className="banner">
+          <Row>
+            <Col xs={12} md={12} id="bufferCol">
+              <h1 id="playlist_name">{this.props.playlist.name}</h1>
+            </Col>
+          </Row>
+        </div>
+    </div>
     )
   }
 }
