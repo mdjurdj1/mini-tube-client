@@ -8,11 +8,13 @@ import { reducer as form } from 'redux-form'
 import auth from '../modules/Auth/reducer'
 import videos from '../modules/Video/reducer'
 import playlists from '../modules/Playlists/reducer'
+import playlistVideos from '../modules/PlaylistVideos/reducer'
 
 const reducers = combineReducers({
   form,
   auth,
   playlists,
+  playlistVideos,
   videos
 })
 
