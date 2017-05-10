@@ -9,10 +9,14 @@ import './styles.css'
 
 class Playlist extends Component {
 
+  componentWillMount() {
+    let id = this.props.match.params.id
+    this.props.getPlaylistVideos(id)
+  }
+
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.getPlaylist(id)
-    this.props.getPlaylistVideos(id)
   }
 
   componentWillUnmount() {
@@ -38,13 +42,13 @@ class Playlist extends Component {
       <h1>
       get videos for this playlist <button onClick={(e)=>this.handleClick(e)}>bleach get</button>
       </h1>
-      <PlaylistVideosList id={this.props.match.params.id} videos={this.props.playlistVideos} />
+      <PlaylistVideosList id={this.props.match.params.id} />
     </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return { playlist: state.playlists.playlist, playlistVideos: state.playlistVideos }
+  return { playlist: state.playlists.playlist, videos: state.playlistVideos.videos }
 }
 export default connect(mapStateToProps, { getPlaylist, resetPlaylist, getPlaylistVideos })(Playlist)

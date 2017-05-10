@@ -13,13 +13,17 @@ class PlaylistsVideoList extends Component {
   }
 
   render() {
-    const videos = this.props.videos.map((video, index) => {
-      <div key={index}>{video.name}</div>
+    const videos = this.props.videos.map(v => {
+      return (
+        <div>
+          <h1>{v.name}</h1>
+        </div>
+      )
     })
     return (
-      <Col sm={4} md={4} mdOffset={4} id="playlists_container">
-        {videos}
-      </Col>
+        <Col sm={4} md={4} mdOffset={4} id="playlists_container">
+          {videos}
+        </Col>
     )
   }
 }
@@ -28,4 +32,4 @@ function mapStateToProps(state) {
   return { videos: state.playlistVideos.videos }
 }
 
-export default connect(mapStateToProps, { getPlaylistVideos })(PlaylistsVideoList)
+export default connect(mapStateToProps)(PlaylistsVideoList)
