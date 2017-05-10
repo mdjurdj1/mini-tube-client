@@ -17,7 +17,7 @@ class VideoList extends Component {
             <Video key={index} video={video} videoId={video.id.videoId}/>
           </Col>
           <Col sm={2} md={2} lg={2} className="add_to_playlist_container">
-              <PlaylistDropdown />
+              <PlaylistDropdown video={video}/>
           </Col>
         </Row>
         <hr />

@@ -9,9 +9,10 @@ export const addPlaylistVideo = () => {
 }
 
 export const createPlaylistVideo = (playlist_id, video) => {
+  let data = {video: {name: video.snippet.title, videoId: video.id.videoId} }
   return dispatch => {
     dispatch({type: 'PROCESSING_PLAYLIST_VIDEO'})
-    return ApiService.post(`/playlists/${playlist_id}`, {video: {name: video.name}} )
+    return ApiService.post(`/playlists/${playlist_id}/videos`, data)
     .then(response => {
       dispatch(addPlaylistVideo(response))
     })
@@ -19,6 +20,21 @@ export const createPlaylistVideo = (playlist_id, video) => {
       console.log(err)
       throw new SubmissionError(err)
     })
+  }
+}
+
+export const getPlaylistVideos = (id) => {
+  return dispatch => {
+    dispatch({type: 'LOADING_PLAYLIST_VIDEOS'});
+    return ApiService.get(`/playlists/${id}/videos`)
+      .then(response => {
+        const videos = response;
+        dispatch({type: 'FETCH_PLAYLIST_VIDEOS', payload: videos })
+      })
+      .catch((err) => {
+        console.log(err)
+        throw new SubmissionError(err)
+      })
   }
 }
 

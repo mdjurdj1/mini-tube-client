@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Glyphicon} from 'react-bootstrap'
 import {connect} from 'react-redux'
+
+import {createPlaylistVideo} from '../../redux/modules/PlaylistVideos/actions'
 import './playlist_dropdown.css'
 
 class PlaylistDropdown extends Component {
@@ -20,11 +22,17 @@ class PlaylistDropdown extends Component {
     });
   }
 
+  handleClick(e, p) {
+    let id = p.id
+    let video = this.props.video
+    this.props.createPlaylistVideo(id, video)
+  }
+
   render() {
 
     const items = this.props.playlists.map((p, index) => {
       return (
-        <li key={index} playlist={p}>
+        <li key={index} onClick={(e)=>{this.handleClick(e, p)}}>
           <Glyphicon id="checked" glyph="heart-empty"/>&nbsp;&nbsp; {p.name}
           <hr id="menu_divider"/>
         </li>)
@@ -54,4 +62,4 @@ class PlaylistDropdown extends Component {
 function mapStateToProps(state) {
   return { playlists: state.playlists.playlists }
 }
-export default connect(mapStateToProps)(PlaylistDropdown)
+export default connect(mapStateToProps, {createPlaylistVideo})(PlaylistDropdown)
