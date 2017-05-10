@@ -1,19 +1,10 @@
 import React, {Component} from 'react'
-import { browserHistory } from 'react-router-dom';
 import {connect} from 'react-redux'
-import {Row, Col} from 'react-bootstrap'
+import {Row, Col, Glyphicon} from 'react-bootstrap'
 import { getPlaylist } from '../../redux/modules/Playlists/actions';
 import './styles.css'
 
 class Playlist extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      playlist: {
-        name: "Playlist not found."
-      }
-    }
-  }
 
   componentDidMount() {
     let id = this.props.match.params.id
@@ -24,13 +15,16 @@ class Playlist extends Component {
   render() {
     return (
     <div>
+    { this.props.playlist ?
         <div className="banner">
           <Row>
             <Col xs={12} md={12} id="bufferCol">
-              <h1 id="playlist_name">{this.props.playlist.name}</h1>
+              <h1 id="playlist_name"><Glyphicon glyph="list" />&nbsp;&nbsp;{this.props.playlist.name}</h1>
             </Col>
           </Row>
         </div>
+      :
+      'Playlist Not found!' }
     </div>
     )
   }
