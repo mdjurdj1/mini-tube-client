@@ -12,5 +12,10 @@
 
 
 #formInlineSearch {
-  width: 25em;
+  width: 20em;
+}
+
+#search {
+  color: #4B7DAE;
+  font-size: 110%
 }

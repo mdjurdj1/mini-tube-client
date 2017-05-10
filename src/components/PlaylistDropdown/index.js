@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {Glyphicon} from 'react-bootstrap'
 import {connect} from 'react-redux'
-import './styles.css'
+import './playlist_dropdown.css'
 
 class PlaylistDropdown extends Component {
   constructor(props) {

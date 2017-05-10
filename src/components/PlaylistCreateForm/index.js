@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap'
 import * as actions from '../../redux/modules/Playlists/actions'
-import './styles.css'
+import './playlist_create_form.css'
 
 class PlaylistCreateForm extends Component {
   constructor(props) {

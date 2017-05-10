@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Form, FormControl, FormGroup, ControlLabel, Button, Glyphicon } from 'react-bootstrap'
 import * as actions from '../../redux/modules/Video/actions'
-import './style.css'
+import './video_search_form.css'
 
 class VideoSearchForm extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class VideoSearchForm extends Component {
                 type="text"
                 placeholder="Hydraulic Press..."
               />
-            <Button type='submit'><Glyphicon glyph="search"/></Button>
+            <Button type='submit' id="search_submit"><Glyphicon glyph="search" id="search"/></Button>
           </FormGroup>
         </Form>
       </div>

@@ -3,7 +3,7 @@ import Video from '../../components/Video'
 import PlaylistDropdown from '../../components/PlaylistDropdown'
 import {connect} from 'react-redux'
 import { Row, Col, Button, Glyphicon, MenuItem } from 'react-bootstrap'
-import './style.css'
+import './video_display.css'
 
 
 class VideoList extends Component {

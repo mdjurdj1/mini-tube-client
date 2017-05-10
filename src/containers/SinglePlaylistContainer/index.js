@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Col, Glyphicon } from 'react-bootstrap'
 import { getPlaylists, deletePlaylistRequest } from '../../redux/modules/Playlists/actions';
-import './styles.css'
+import './single_playlist_container.css'
 
 class SinglePlaylistContainer extends Component {
 
