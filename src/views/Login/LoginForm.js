@@ -8,13 +8,13 @@ type Props = {
   handleSubmit: () => void,
 }
 
-const validateUsername = values => {
+const validateEmail = values => {
   const errors = {};
 
-  if (!values.username) {
-    errors.username = 'Username is required';
-  } else if (values.username.length < 2) {
-    errors.username = 'Username must be a minimum of 2 characters';
+  if (!values.email) {
+    errors.email = 'Email is required';
+  } else if (values.email.length < 2) {
+    errors.email = 'Email must be a minimum of 2 characters';
   }
 
   return errors;
@@ -35,10 +35,10 @@ const validatePassword = values => {
 const validate = values => {
   const errors = {};
 
-  if (!values.username) {
-    errors.username = 'Username is required';
-  } else if (values.username.length < 2) {
-    errors.email = 'Username must be a minimum of 2 characters';
+  if (!values.email) {
+    errors.email = 'Email is required';
+  } else if (values.email.length < 2) {
+    errors.email = 'Email must be a minimum of 2 characters';
   }
   if (!values.password) {
     errors.password = 'Password is required';
@@ -53,9 +53,9 @@ class LoginForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: "",
+      email: "",
       password: "",
-      usernameErrors: {},
+      emailErrors: {},
       passwordError: {}
     }
   }
@@ -65,10 +65,10 @@ class LoginForm extends Component {
   handleSubmit = data => this.props.onSubmit(data);
 
   handleChange(e) {
-    if (e.target.name === "username") {
+    if (e.target.name === "email") {
       this.setState({
-        usernameErrors: validateUsername({username: e.target.value}),
-        username: e.target.value
+        emailErrors: validateEmail({email: e.target.value}),
+        email: e.target.value
       })
     } else {
       this.setState({
@@ -83,19 +83,19 @@ class LoginForm extends Component {
   return (
     <form onSubmit={handleSubmit(this.handleSubmit)}>
       <div className="field">
-        <label className="label" htmlFor="username"> Username </label>
+        <label className="label" htmlFor="email"> Email </label>
         <p className="control">
           <Field
-            name="username"
+            name="email"
             value={this.state.username}
             onChange={e=>this.handleChange(e)}
             className="input"
             component="input"
             type="text"
-            placeholder="Username"
+            placeholder="Email address..."
           />
         </p>
-        {this.state.usernameErrors !== {} ? <p className="help is-danger">{this.state.usernameErrors.username}</p> : null}
+        {this.state.emailErrors !== {} ? <p className="help is-danger">{this.state.emailErrors.email}</p> : null}
       </div>
 
       <div className="field">
