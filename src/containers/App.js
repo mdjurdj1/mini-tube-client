@@ -25,6 +25,7 @@ import RedirectUnauthenticated from '../components/RedirectUnauthenticated/';
 import NestedMatchAuthenticated from '../components/NestedMatchAuthenticated/';
 import Errors from '../components/Errors';
 import { authenticate, authenticationFailure, logout } from '../redux/modules/Auth/actions';
+import { getPlaylists } from '../redux/modules/Playlists/actions'
 
 type Props = {
   isAuthenticating: boolean,
@@ -46,6 +47,7 @@ class App extends Component {
    if (token) {
      console.log('Fetching a new token!');
      this.props.authenticate();
+     this.props.getPlaylists()
    } else {
      this.props.authenticationFailure();
    }
@@ -85,5 +87,5 @@ export default connect(
     isAuthenticated: state.auth.isAuthenticated,
     currentUser: state.auth.currentUser,
     errors: state.auth.errors
-  }), { logout, authenticate, authenticationFailure }
+  }), { logout, authenticate, authenticationFailure, getPlaylists }
 )(App);

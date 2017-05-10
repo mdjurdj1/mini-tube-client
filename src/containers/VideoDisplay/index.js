@@ -1,24 +1,29 @@
 import React, {Component} from 'react'
 import Video from '../../components/Video'
+import PlaylistDropdown from '../../components/PlaylistDropdown'
 import {connect} from 'react-redux'
-import { Row, Col, Button, Glyphicon } from 'react-bootstrap'
+import { Row, Col, Button, Glyphicon, MenuItem } from 'react-bootstrap'
 import './style.css'
 
 
 class VideoList extends Component {
   render() {
+
     const videos = this.props.videos.map((video, index) => {
       return (
       <div>
-      <Row>
-        <Col sm={4} md={4} mdOffset={3}>
-          <Video key={index} video={video} videoId={video.id.videoId}/>
-        </Col>
-        <Col sm={3} md={3}>
-        <Button onClick={e=>this.handleClick(e)} className="add_to_playlist"><Glyphicon glyph="plus" id='heart'/>&nbsp;Add to a playlist! </Button>
-        </Col>
-      </Row>
-      <hr />
+        <Row>
+          <Col sm={4} md={4} smOffset={3} mdOffset={3}>
+            <Video key={index} video={video} videoId={video.id.videoId}/>
+          </Col>
+          <Col sm={2} md={2} smOffset={1} mdOffset={1}className="single_video_container">
+            <div className="add_button">
+              <Glyphicon glyph="plus" id='heart'/>
+              <PlaylistDropdown />
+            </div>
+          </Col>
+        </Row>
+        <hr />
       </div>
       )
     })
@@ -32,7 +37,7 @@ class VideoList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { videos: state.videos.links }
+  return { videos: state.videos.links, playlists: state.playlists.playlists }
 }
 
 export default connect(mapStateToProps)(VideoList)

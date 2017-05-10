@@ -2,3 +2,22 @@
   text-align: center;
   padding: 1em
 }
+
+.single_video_container {
+      margin-top: 2em;
+      margin-left: 2em;
+      margin-bottom: 2em;
+      margin-right: 2em;
+      background-color: #white;
+      border: #cdcdcd medium solid;
+}
+
+.add_button {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+hr {
+  width:90%;
+ border: 1px solid white;
+}
