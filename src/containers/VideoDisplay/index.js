@@ -11,16 +11,13 @@ class VideoList extends Component {
 
     const videos = this.props.videos.map((video, index) => {
       return (
-      <div>
+      <div key={index}>
         <Row>
           <Col sm={4} md={4} smOffset={3} mdOffset={3}>
             <Video key={index} video={video} videoId={video.id.videoId}/>
           </Col>
-          <Col sm={2} md={2} smOffset={1} mdOffset={1}className="single_video_container">
-            <div className="add_button">
-              <Glyphicon glyph="plus" id='heart'/>
+          <Col sm={2} md={2} lg={2} className="add_to_playlist_container">
               <PlaylistDropdown />
-            </div>
           </Col>
         </Row>
         <hr />

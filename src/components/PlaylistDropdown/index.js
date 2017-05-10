@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {Glyphicon} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import './styles.css'
 
@@ -22,7 +23,11 @@ class PlaylistDropdown extends Component {
   render() {
 
     const items = this.props.playlists.map((p, index) => {
-      return (<li>{p.name}</li>)
+      return (
+        <li key={index} playlist={p}>
+          <Glyphicon id="checked" glyph="heart-empty"/>&nbsp;&nbsp; {p.name}
+          <hr id="menu_divider"/>
+        </li>)
     })
 
     let menu;
@@ -37,7 +42,7 @@ class PlaylistDropdown extends Component {
     }
     return (
       <div id="menu">
-        <i className="fa fa-plus" onClick={ this.toggleMenu }/>
+      <span id="wanna_add" onClick={this.toggleMenu}><Glyphicon glyph="plus" id='plus' />&nbsp; Add this video to a playlist!</span>
       <ReactCSSTransitionGroup transitionName="menu" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
         {menu}
       </ReactCSSTransitionGroup>

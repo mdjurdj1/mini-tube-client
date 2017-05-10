@@ -16,6 +16,39 @@
   max-height: 0px; }
 
 #dropdown {
-  border: #ababab solid 1px;
+  list-style-type: none;
+  text-align: left;
+  color: white;
+  font-size: 105%;
+  font-weight: bold;
+  margin-left: 1em;
+  padding-top: 1.4em;
   width: 70%;
+}
+
+hr#menu_divider {
+   width: 100%;
+   border: .2px solid rgba(0, 0, 0, .2);
+}
+
+#plus {
+  color: #DEE9FE;
+  cursor: pointer;
+}
+
+#plus:hover {
+  color: blue;
+}
+
+#checked:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#wanna_add {
+  font-size: 1.3em;
+  font-family: ‘Arial Black’, Gadget, sans-serif;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 0.4em black, 0 0 0.4em black;
 }

@@ -3,12 +3,14 @@
   padding: 1em
 }
 
-.single_video_container {
+.add_to_playlist_container {
+      padding-top: 1em;
+      padding-bottom: 1em;
+      margin-left: 1em;
       margin-top: 2em;
-      margin-left: 2em;
       margin-bottom: 2em;
       margin-right: 2em;
-      background-color: #white;
+      background-color: #546CAA;
       border: #cdcdcd medium solid;
 }
 
