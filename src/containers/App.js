@@ -55,6 +55,7 @@ class App extends Component {
 
  componentWillMount() {
     document.body.style.backgroundImage = `url(${Background})`;
+    document.body.style.backgroundSize = 'cover'
 }
 
   render() {
