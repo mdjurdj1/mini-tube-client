@@ -28,3 +28,6 @@ h1 {
   float: right;
   cursor: pointer;
 }
+.playlist_delete_glyph:hover {
+  color: red
+}
