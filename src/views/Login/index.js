@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Glyphicon } from 'react-bootstrap'
 import { login } from '../../redux/modules/Auth/actions';
 import LoginForm from './LoginForm';
 
@@ -24,13 +24,13 @@ class Login extends Component {
       <Row>
         <Col sm={4} md={4} />
         <Col sm={4} md={4} id="login_box">
-          <h1>Log in to Mini-Tube</h1>
+          <h1 id="login_header">Log in to Mini-Tube</h1>
           <LoginForm onSubmit={this.handleLogin} />
 
           <hr />
 
           <p>Don't have an account?</p>
-          <NavLink to="/signup">Create new account >></NavLink>
+          <NavLink to="/signup" id="signup_link"><Glyphicon glyph="share-alt" />  Create new account </NavLink>
         </Col>
       </Row>
     )
