@@ -34,7 +34,7 @@ class PlaylistsVideoList extends Component {
       )
     })
     return (
-        <Col sm={4} md={4} mdOffset={4} id="playlists_container">
+        <Col sm={5} md={5} mdOffset={4} id="playlist_videos_container">
           {videos}
         </Col>
     )
