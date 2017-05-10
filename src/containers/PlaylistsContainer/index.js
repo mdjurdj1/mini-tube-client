@@ -11,6 +11,8 @@ class PlaylistsContainer extends Component {
     this.props.getPlaylists()
   }
 
+  componentWillUnmount() {}
+
   handleClick(playlist_id) {
     console.log(playlist_id)
     this.props.deletePlaylistRequest(playlist_id)

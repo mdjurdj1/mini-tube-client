@@ -8,6 +8,13 @@ export const addPlaylistVideo = () => {
   }
 }
 
+export const deletePlaylistVideo = (id) => {
+  return {
+    type: 'DELETE_PLAYLIST_VIDEO',
+    id: id
+  }
+}
+
 export const createPlaylistVideo = (playlist_id, video) => {
   let data = {video: {name: video.snippet.title, videoId: video.id.videoId} }
   return dispatch => {
@@ -37,6 +44,22 @@ export const getPlaylistVideos = (id) => {
       })
   }
 }
+
+export const deleteVid = (playlist_id, video_id) => {
+  return dispatch => {
+    dispatch({type: 'PROCESSING_ACTION'})
+    return ApiService.delete(`/playlists/${playlist_id}/videos/${video_id}`)
+    .then(response => {
+      dispatch(deletePlaylist(id))
+      console.log('successfully deleted video')
+    })
+    .catch((err) => {
+      console.log(err)
+      throw new SubmissionError(err)
+    })
+  }
+}
+
 
 // export const deletePlaylistRequest = (id) => {
 //   return dispatch => {
