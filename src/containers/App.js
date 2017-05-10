@@ -15,6 +15,7 @@ import Search from '../views/Search'
 import Playlist from '../views/Playlist'
 import Playlists from '../views/Playlists'
 import Dashboard from '../containers/Dashboard'
+import Background from '../../public/background.jpg'
 
 import {withRouter} from 'react-router'
 import Navbar from '../components/Navbar'
@@ -50,6 +51,10 @@ class App extends Component {
    }
  }
 
+ componentWillMount() {
+    document.body.style.backgroundImage = `url(${Background})`;
+}
+
   render() {
     const { isAuthenticated, isAuthenticating, currentUser, logout, errors } = this.props;
     const authProps = { isAuthenticated, isAuthenticating, currentUser };
@@ -58,9 +63,6 @@ class App extends Component {
       <Router>
         <div className="App">
         <NavigationWithRouter isAuthenticated={isAuthenticated} logout={logout} />
-
-          <hr />
-
           <Switch>
             <Route exact path="/" component={Home} />
             <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps} />

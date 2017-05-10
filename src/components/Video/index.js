@@ -1,9 +1,16 @@
 import React, {Component} from 'react'
 import { Button, Glyphicon } from 'react-bootstrap'
+import { connect } from 'react-redux'
 import YouTube from 'react-youtube'
+
+import { createPlaylistVideo } from '../../redux/modules/PlaylistVideos/actions'
 import './video.css'
 
-export default class Video extends Component {
+class Video extends Component {
+
+  handleClick(e) {
+  }
+
   render() {
       const opts = {
         height: '300',
@@ -19,8 +26,7 @@ export default class Video extends Component {
               videoId={this.props.videoId}
               opts={opts}
               onReady={this._onReady}
-            /> <br />
-            <Button className="add_to_playlist"><Glyphicon glyph="heart" id='heart'/>&nbsp;Add to a playlist! </Button>
+            /> 
         </div>
       );
     }
@@ -30,3 +36,5 @@ export default class Video extends Component {
       event.target.pauseVideo();
     }
   }
+
+export default connect(null, { createPlaylistVideo })(Video)
