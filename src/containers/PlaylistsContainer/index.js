@@ -7,7 +7,7 @@ import './styles.css'
 
 class PlaylistsContainer extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getPlaylists()
   }
 
