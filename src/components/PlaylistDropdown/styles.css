@@ -5,10 +5,10 @@
 
 .menu-enter.menu-enter-active {
   height: auto;
-  max-height: 100px; }
+  max-height: 1000px; }
 
 .menu-leave {
-  max-height: 100px;
+  max-height: 1000px;
   -webkit-transition: max-height 1s ease; }
 
 .menu-leave.menu-leave-active {
@@ -37,7 +37,11 @@ hr#menu_divider {
 }
 
 #plus:hover {
-  color: blue;
+  color: #23A5BB;
+}
+
+#checked {
+  font-size: 120%;
 }
 
 #checked:hover {
