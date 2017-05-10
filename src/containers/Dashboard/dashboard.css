@@ -1,0 +1,11 @@
+#dash_username {
+  font-size: 2em;
+  font-family: ‘Arial Black’, Gadget, sans-serif;
+  font-weight: bold;
+  color: #4FCFE2;
+  text-shadow: 0 0 0.2em black, 0 0 0.2em black;
+}
+
+h1#dashboard_h1 {
+  text-align: center;
+}
