@@ -2,21 +2,24 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Col, Glyphicon } from 'react-bootstrap'
-import { getPlaylistVideos} from '../../redux/modules/PlaylistVideos/actions';
+import Video from '../../components/Video'
+import { getVid } from '../../redux/modules/Video/actions';
 import './playlist_videos_list.css'
 
 class PlaylistsVideoList extends Component {
 
-  handleClick(playlist_id) {
-    // console.log(playlist_id)
-    // this.props.deletePlaylistRequest(playlist_id)
+  handleClick(e, v) {
+    let id = v.id
+    this.props.getVid(id)
   }
 
   render() {
-    const videos = this.props.videos.map(v => {
+    const videos = this.props.videos.map((v, index) => {
       return (
-        <div>
-          <h1>{v.name}</h1>
+        <div key={index}>
+          <h1 onClick={e=>this.handleClick(e, v)}>{v.name}</h1>
+          <Video key={index} video={v} videoId={v.videoId}/>
+          <hr />
         </div>
       )
     })
@@ -32,4 +35,4 @@ function mapStateToProps(state) {
   return { videos: state.playlistVideos.videos }
 }
 
-export default connect(mapStateToProps)(PlaylistsVideoList)
+export default connect(mapStateToProps, {getVid})(PlaylistsVideoList)

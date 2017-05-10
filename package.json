@@ -19,6 +19,7 @@
     "semantic-ui-react": "^0.68.3"
   },
   "devDependencies": {
+    "react-native-dotenv": "0.0.4",
     "react-redux": "^5.0.4",
     "react-scripts": "0.9.5"
   },

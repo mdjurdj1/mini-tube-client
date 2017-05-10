@@ -23,10 +23,10 @@ class Playlist extends Component {
     this.props.resetPlaylist()
   }
 
-  handleClick(e) {
-    let id = this.props.match.params.id
-    this.props.getPlaylistVideos(id)
-  }
+  // handleClick(e) {
+  //   let id = this.props.match.params.id
+  //   this.props.getPlaylistVideos(id)
+  // }
 
   render() {
     return (
@@ -39,9 +39,6 @@ class Playlist extends Component {
             </Col>
           </Row>
         </div>  }
-      <h1>
-      get videos for this playlist <button onClick={(e)=>this.handleClick(e)}>bleach get</button>
-      </h1>
       <PlaylistVideosList id={this.props.match.params.id} />
     </div>
     )

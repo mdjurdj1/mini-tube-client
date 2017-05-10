@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Button, Glyphicon } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import YouTube from 'react-youtube'
 
@@ -7,9 +6,6 @@ import { createPlaylistVideo } from '../../redux/modules/PlaylistVideos/actions'
 import './video.css'
 
 class Video extends Component {
-
-  handleClick(e) {
-  }
 
   render() {
       const opts = {
@@ -26,7 +22,7 @@ class Video extends Component {
               videoId={this.props.videoId}
               opts={opts}
               onReady={this._onReady}
-            /> 
+            />
         </div>
       );
     }

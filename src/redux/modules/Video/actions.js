@@ -27,3 +27,24 @@ export function searchVids(query) {
       })
   }
 }
+
+export function getVid(id) {
+
+  const params = {
+    part: 'player',
+    id: id,
+    key: key,
+    type: `video`,
+    videoEmbeddable: `true`
+  }
+
+  return function(dispatch) {
+    dispatch({type: 'LOADING_VID'})
+    return fetch(`${SEARCH_URL}?${querystring.stringify(params)}`)
+      .then(res => {return res.json()})
+      .then(responseJson => {
+        dispatch({type: 'FETCH_VID', payload: responseJson.items})
+      })
+  }
+
+}
