@@ -1,4 +1,4 @@
-export default function playlistVideosReducer(state={loading: false}, action) {
+export default function playlistVideosReducer(state={loading: false, videos: []}, action) {
   switch(action.type) {
     // case 'LOADING_VIDS':
     //   return {...state, loading: true}
@@ -9,6 +9,7 @@ export default function playlistVideosReducer(state={loading: false}, action) {
     case "FETCH_PLAYLIST_VIDEOS":
       return {
         ...state,
+        loading: false,
         videos: [].concat(action.payload)
       }
     default:

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
+
+import PlaylistVideosList from '../../containers/PlaylistVideosList'
 import { getPlaylist, resetPlaylist } from '../../redux/modules/Playlists/actions';
 import { getPlaylistVideos } from '../../redux/modules/PlaylistVideos/actions'
 import './styles.css'
@@ -10,6 +12,7 @@ class Playlist extends Component {
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.getPlaylist(id)
+    this.props.getPlaylistVideos(id)
   }
 
   componentWillUnmount() {
@@ -20,6 +23,7 @@ class Playlist extends Component {
     let id = this.props.match.params.id
     this.props.getPlaylistVideos(id)
   }
+
   render() {
     return (
     <div>
@@ -31,15 +35,16 @@ class Playlist extends Component {
             </Col>
           </Row>
         </div>  }
-    <h1>
+      <h1>
       get videos for this playlist <button onClick={(e)=>this.handleClick(e)}>bleach get</button>
       </h1>
+      <PlaylistVideosList id={this.props.match.params.id} videos={this.props.playlistVideos} />
     </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return { playlist: state.playlists.playlist }
+  return { playlist: state.playlists.playlist, playlistVideos: state.playlistVideos }
 }
 export default connect(mapStateToProps, { getPlaylist, resetPlaylist, getPlaylistVideos })(Playlist)
