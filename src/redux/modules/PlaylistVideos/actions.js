@@ -50,7 +50,7 @@ export const deleteVid = (playlist_id, video_id) => {
     dispatch({type: 'PROCESSING_ACTION'})
     return ApiService.delete(`/playlists/${playlist_id}/videos/${video_id}`)
     .then(response => {
-      dispatch(deletePlaylist(id))
+      dispatch(deletePlaylistVideo(playlist_id))
       console.log('successfully deleted video')
     })
     .catch((err) => {

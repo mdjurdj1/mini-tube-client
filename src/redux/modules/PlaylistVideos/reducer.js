@@ -12,6 +12,11 @@ export default function playlistVideosReducer(state={loading: false, videos: []}
         loading: false,
         videos: [].concat(action.payload)
       }
+    case "DELETE_PLAYLIST_VIDEO":
+      const index = state.videos.findIndex(v => v.id === action.id)
+      const newVideosArr = [].concat(state.videos)
+      newVideosArr.splice(index, 1)
+      return {...state, videos: newVideosArr}
     default:
       return state
   }

@@ -14,8 +14,9 @@ class PlaylistsVideoList extends Component {
     this.props.getVid(id)
   }
 
-  handleDelete(id) {
-    this.props.deleteVid(id)
+  handleDelete(video_id) {
+    let playlist_id = this.props.id
+    this.props.deleteVid(playlist_id, video_id)
   }
 
   render() {
