@@ -8,13 +8,13 @@ type Props = {
   handleSubmit: () => void,
 }
 
-const validateUsername = values => {
+const validateEmail = values => {
   const errors = {};
 
-  if (!values.username) {
-    errors.username = 'Username is required';
-  } else if (values.username.length < 2) {
-    errors.username = 'Username must be a minimum of 2 characters';
+  if (!values.email) {
+    errors.email = 'Email is required';
+  } else if (values.email.length < 2) {
+    errors.email = 'Email must be a minimum of 2 characters';
   }
 
   return errors;
@@ -35,10 +35,10 @@ const validatePassword = values => {
 const validate = values => {
   const errors = {};
 
-  if (!values.username) {
-    errors.username = 'Username is required';
-  } else if (values.username.length < 2) {
-    errors.email = 'Username must be a minimum of 2 characters';
+  if (!values.email) {
+    errors.email = 'Email is required';
+  } else if (values.email.length < 2) {
+    errors.email = 'Email must be a minimum of 2 characters';
   }
   if (!values.password) {
     errors.password = 'Password is required';
@@ -55,7 +55,7 @@ class SignupForm extends Component {
     this.state = {
       email: "",
       password: "",
-      usernameErrors: {},
+      emailErrors: {},
       passwordError: {}
     }
   }
@@ -67,8 +67,8 @@ class SignupForm extends Component {
   handleChange(e) {
     if (e.target.name === "username") {
       this.setState({
-        usernameErrors: validateUsername({email: e.target.value}),
-        username: e.target.value
+        emailErrors: validateEmail({email: e.target.value}),
+        email: e.target.value
       })
     } else {
       this.setState({
@@ -83,7 +83,7 @@ class SignupForm extends Component {
   return (
     <form onSubmit={handleSubmit(this.handleSubmit)}>
       <div className="field">
-        <label className="label" htmlFor="username"> Email </label>
+        <label className="label" htmlFor="email"> Email </label>
         <p className="control">
           <Field
             name="email"
@@ -95,7 +95,7 @@ class SignupForm extends Component {
             placeholder="Email address..."
           />
         </p>
-        {this.state.usernameErrors !== {} ? <p className="help is-danger">{this.state.usernameErrors.username}</p> : null}
+        {this.state.emailErrors !== {} ? <p className="help is-danger">{this.state.emailErrors.email}</p> : null}
       </div>
 
       <div className="field">
