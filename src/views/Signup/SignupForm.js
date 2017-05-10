@@ -53,7 +53,7 @@ class SignupForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: "",
+      email: "",
       password: "",
       usernameErrors: {},
       passwordError: {}
@@ -67,7 +67,7 @@ class SignupForm extends Component {
   handleChange(e) {
     if (e.target.name === "username") {
       this.setState({
-        usernameErrors: validateUsername({username: e.target.value}),
+        usernameErrors: validateUsername({email: e.target.value}),
         username: e.target.value
       })
     } else {
@@ -83,16 +83,16 @@ class SignupForm extends Component {
   return (
     <form onSubmit={handleSubmit(this.handleSubmit)}>
       <div className="field">
-        <label className="label" htmlFor="username"> Username </label>
+        <label className="label" htmlFor="username"> Email </label>
         <p className="control">
           <Field
-            name="username"
+            name="email"
             value={this.state.username}
             onChange={e=>this.handleChange(e)}
             className="input"
             component="input"
             type="text"
-            placeholder="Username"
+            placeholder="Email address..."
           />
         </p>
         {this.state.usernameErrors !== {} ? <p className="help is-danger">{this.state.usernameErrors.username}</p> : null}
