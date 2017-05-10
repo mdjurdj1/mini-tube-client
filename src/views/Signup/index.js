@@ -23,7 +23,7 @@ class Signup extends Component {
       <Row>
         <Col sm={4} md={4} />
         <Col sm={4} md={4} id="signup_box">
-          <h1>Join Mini-Tube today!</h1>
+          <h1 id="signup_header">Join Mini-Tube today!</h1>
           <SignupForm onSubmit={this.handleSignup} />
 
           <hr />
