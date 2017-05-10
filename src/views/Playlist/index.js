@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
-import { getPlaylist } from '../../redux/modules/Playlists/actions';
+import { getPlaylist, resetPlaylist } from '../../redux/modules/Playlists/actions';
 import './styles.css'
 
 class Playlist extends Component {
@@ -11,20 +11,23 @@ class Playlist extends Component {
     this.props.getPlaylist(id)
   }
 
+  componentWillUnmount() {
+    this.props.resetPlaylist()
+  }
+
 
   render() {
     return (
     <div>
-    { this.props.playlist ?
+    { !this.props.playlist ? <h1>'Playlist Not found!'</h1> :
         <div className="banner">
           <Row>
             <Col xs={12} md={12} id="bufferCol">
               <h1 id="playlist_name"><Glyphicon glyph="list" />&nbsp;&nbsp;{this.props.playlist.name}</h1>
             </Col>
           </Row>
-        </div>
-      :
-      'Playlist Not found!' }
+        </div>  }
+    <h1>get videos for this playlist</h1>
     </div>
     )
   }
@@ -33,4 +36,4 @@ class Playlist extends Component {
 function mapStateToProps(state) {
   return { playlist: state.playlists.playlist }
 }
-export default connect(mapStateToProps, { getPlaylist })(Playlist)
+export default connect(mapStateToProps, { getPlaylist, resetPlaylist })(Playlist)

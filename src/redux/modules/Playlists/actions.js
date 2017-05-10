@@ -49,6 +49,12 @@ export const deletePlaylist = (id) => {
   }
 }
 
+export const resetPlaylist = () => {
+  return {
+    type: 'RESET_PLAYLIST'
+  }
+}
+
 export const createPlaylistRequest = (name) => {
   return dispatch => {
     dispatch({type: 'PROCESSING_ACTION'})

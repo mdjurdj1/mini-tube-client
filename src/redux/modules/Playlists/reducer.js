@@ -19,6 +19,8 @@ export default function playlistsReducer(state={loading: false, playlists: []}, 
       const newPlaylist = [].concat(state.playlists)
       newPlaylist.splice(index, 1)
       return {...state, playlists: newPlaylist}
+    case 'RESET_PLAYLIST':
+      return {...state, playlist: []}
     default:
       return state
   }
