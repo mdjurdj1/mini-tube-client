@@ -6,20 +6,9 @@ import { getPlaylists, deletePlaylistRequest } from '../../redux/modules/Playlis
 import './playlists_container.css'
 
 class PlaylistsContainer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      loading: true
-    }
-  }
 
   componentDidMount() {
     this.props.getPlaylists()
-    if(this.props.playlist) {
-      this.setState({
-      loading: false
-      })
-    }
   }
 
   componentWillUnmount() {}
@@ -51,7 +40,7 @@ class PlaylistsContainer extends Component {
 
     return (
       <Col sm={4} md={4} mdOffset={4} id="playlists_container">
-         { !this.state.loading ? {playlists} : <h1>No Playlists saved here yet!</h1> }
+        {playlists}
       </Col>
     )
   }
