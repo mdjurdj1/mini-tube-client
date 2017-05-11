@@ -41,7 +41,6 @@ class DropdownItem extends Component {
             <span className="list_item">
               <Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; {p.name}</span>
            }
-        <hr id="menu_divider"/>
       </li>
     )
   }

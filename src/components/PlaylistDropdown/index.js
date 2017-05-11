@@ -43,7 +43,9 @@ class PlaylistDropdown extends Component {
     }
     return (
       <div id="menu">
-      <span id="wanna_add" onClick={this.toggleMenu}><Glyphicon glyph="plus" id='plus' />&nbsp; Add this video to a playlist!</span>
+      <span id="wanna_add" onClick={this.toggleMenu}>
+        <Glyphicon glyph="plus" id='plus' />&nbsp; Add this video to a playlist!
+      </span>
       <ReactCSSTransitionGroup transitionName="menu" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
         {menu}
       </ReactCSSTransitionGroup>
