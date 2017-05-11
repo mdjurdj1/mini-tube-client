@@ -9,7 +9,10 @@
 
 .menu-leave {
   max-height: 1000px;
-  -webkit-transition: max-height 1s ease; }
+  -webkit-transition: max-height .25s ease;
+  -webkit-transition-delay: 0s; /* Safari */
+  transition-delay: 0s;
+}
 
 .menu-leave.menu-leave-active {
   overflow: hidden;
@@ -35,10 +38,6 @@ hr#menu_divider {
 #plus {
   color: #DEE9FE;
   cursor: pointer;
-}
-
-#plus:hover {
-  color: #23A5BB;
 }
 
 .add_to_playlist_glyph {

@@ -36,7 +36,7 @@ class PlaylistCreateForm extends Component {
                 type="text"
                 placeholder="Playlist name..."
               />
-            <Button type='submit'>Create Playlist</Button>
+            <Button type='submit' bsStyle="primary" id="create_playlist_button">Create Playlist</Button>
           </FormGroup>
         </Form>
       </div>

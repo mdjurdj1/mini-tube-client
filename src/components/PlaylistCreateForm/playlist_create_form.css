@@ -1,3 +1,8 @@
 .PlaylistCreateForm {
+  margin: 2em;
   text-align: center;
+}
+
+#formInlineSearch {
+    border: 1px solid black;
 }
