@@ -30,7 +30,7 @@ class navbarInstance extends Component {
     <Navbar className="nav" collapseOnSelect>
       <Navbar.Header>
         <Navbar.Brand>
-          <Glyphicon id='logo' glyph="play-circle"/>&nbsp;
+          <Glyphicon id='logo' glyph="play-circle"/>&nbsp;&nbsp;
           {this.props.isAuthenticated ?
             <a id="brand" onClick={ e => this.props.history.push("/dashboard") }>Mini-Tube</a> :
             <a id="brand" onClick={ e => this.props.history.push("/") }>Mini-Tube</a>
