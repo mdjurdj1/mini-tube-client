@@ -12,10 +12,10 @@ h1 {
     padding-bottom: 2em;
     padding-right: 2em;
     background-color: #F6F6F4;
-    border: #cdcdcd medium solid;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    border: 1px black solid;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
 
 hr.playlist_divider {
@@ -35,6 +35,7 @@ hr.playlist_divider {
 .playlist_delete_glyph {
   float: right;
   cursor: pointer;
+  color: #5C67A6;
 }
 .playlist_delete_glyph:hover {
   color: red

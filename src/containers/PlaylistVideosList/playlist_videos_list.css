@@ -6,6 +6,13 @@ h1#vidName {
   color: black;
 }
 
+hr.playlist_divider#playlistVideosDivider {
+  width: 90%;
+  border: none;
+  height: .5px;
+  background-color: #5A68A6;
+}
+
 .playlist_video_delete_glyph {
   float: right;
   margin-top: .5em;

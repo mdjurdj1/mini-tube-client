@@ -31,7 +31,7 @@ class PlaylistsContainer extends Component {
             <span
               onClick={() => {if(confirm('Delete this playlist?')) {this.handleClick(playlist.id)};}}
               >
-              <Glyphicon glyph="remove" className='playlist_delete_glyph'/>
+              <Glyphicon glyph="remove-circle" className='playlist_delete_glyph'/>
               </span>
         { !(playlistLength === index+1) ?  <hr className="playlist_divider"/> : null }
         </div>
