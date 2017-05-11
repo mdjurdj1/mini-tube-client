@@ -9,11 +9,11 @@ export default class Search extends Component {
     return (
       <div>
         <div className="banner">
-        <Row>
-          <Col xs={12} md={12} id="bufferCol">
-            <VideoSearchForm />
-          </Col>
-        </Row>
+          <Row>
+            <Col xs={12} md={12} id="bufferCol">
+              <VideoSearchForm />
+            </Col>
+          </Row>
         </div>
         <VideoDisplay />
       </div>

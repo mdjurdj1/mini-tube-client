@@ -13,10 +13,10 @@ class VideoList extends Component {
       return (
       <div key={index}>
         <Row>
-          <Col sm={4} md={4} smOffset={3} mdOffset={3}>
+          <Col md={4} mdOffset={3}>
             <Video key={index} video={video} videoId={video.id.videoId}/>
           </Col>
-          <Col sm={2} md={2} lg={2} className="add_to_playlist_container">
+          <Col md={2} className="add_to_playlist_container">
               <PlaylistDropdown video={video}/>
           </Col>
         </Row>

@@ -17,7 +17,7 @@ class Video extends Component {
       };
 
       return (
-          <div className='video_box'>
+          <div className='responsive_video'>
             <YouTube
               videoId={this.props.videoId}
               opts={opts}
