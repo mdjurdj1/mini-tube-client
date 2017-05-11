@@ -9,15 +9,13 @@
 
 #brand {
   cursor: pointer;
-  font-family: ‘Arial Black’, Gadget, sans-serif;
-  font-weight: bold;
-  font-size: 120%;
-  color: white;
-  text-shadow: 0 0 0.2em blue, 0 0 0.2em blue
+  font-size: 110%;
+  text-decoration: none;
+  color: #5173A9;
 }
 
 #logo {
-  color: blue;
+  color: #5173A9;
 }
 #logo:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;

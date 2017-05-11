@@ -22,7 +22,7 @@ import Navbar from '../components/Navbar'
 
 import MatchAuthenticated from '../components/MatchAuthenticated/';
 import RedirectUnauthenticated from '../components/RedirectUnauthenticated/';
-import NestedMatchAuthenticated from '../components/NestedMatchAuthenticated/';
+// import NestedMatchAuthenticated from '../components/NestedMatchAuthenticated/';
 import Errors from '../components/Errors';
 import { authenticate, authenticationFailure, logout } from '../redux/modules/Auth/actions';
 import { getPlaylists } from '../redux/modules/Playlists/actions'
