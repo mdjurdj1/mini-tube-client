@@ -39,14 +39,13 @@ class PlaylistsContainer extends Component {
     })
 
     return (
-      ( playlists.length > 0 ?
-      <Col sm={4} md={4} mdOffset={4} id="playlists_container">
-         {playlists}
-      </Col> :
-      <Col sm={4} md={4} mdOffset={4} id="playlists_container">
-        <h1>No playlists have been saved. Create a new one above!</h1>
-      </Col>
-      )
+      playlists.length > 0 ?
+        <Col sm={4} md={4} mdOffset={4} id="playlists_container">
+           {playlists}
+        </Col> :
+        <Col sm={4} md={4} mdOffset={4} id="playlists_container">
+          <h1>No playlists have been saved. Create a new one above!</h1>
+        </Col>
     )
   }
 }
