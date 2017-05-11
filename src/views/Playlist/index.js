@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
 
+// import PlaylistVideosDisplay from '../../containers/PlaylistVideosDisplay'
 import PlaylistVideosList from '../../containers/PlaylistVideosList'
 import { getPlaylist, resetPlaylist } from '../../redux/modules/Playlists/actions';
 import { getPlaylistVideos } from '../../redux/modules/PlaylistVideos/actions'
@@ -25,7 +26,7 @@ class Playlist extends Component {
 
   render() {
     return (
-    <div className="group">
+    <div>
     { !this.props.playlist ? <h1>'Loading...'</h1> :
         <div className="banner">
           <Row>

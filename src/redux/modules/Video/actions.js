@@ -5,7 +5,7 @@ import querystring from 'querystring'
 // import parseJSON from './fetch/parse-json'
 
 const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search`
-const key = `AIzaSyB1E_RNaA_yrhOFr0qYG7nzghhSddiY750`
+const key = process.env.REACT_APP_YOUTUBE_API_KEY
 
 export function searchVids(query) {
 
