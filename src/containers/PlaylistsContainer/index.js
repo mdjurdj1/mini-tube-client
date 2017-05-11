@@ -22,26 +22,31 @@ class PlaylistsContainer extends Component {
     let playlistLength = this.props.playlists.length
     const playlists = this.props.playlists.map((playlist, index) => {
       return (
-        <div key={index} className="playlist_div">
-          &nbsp;&nbsp;&nbsp;
-            <Link to={`/playlists/${playlist.id}`}>
-              <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;&nbsp;
-              {playlist.name}
-            </Link>
-            <span
-              onClick={() => {if(confirm('Delete this playlist?')) {this.handleClick(playlist.id)};}}
-              >
-              <Glyphicon glyph="remove-circle" className='playlist_delete_glyph'/>
-              </span>
-        { !(playlistLength === index+1) ?  <hr className="playlist_divider"/> : null }
-        </div>
-      )
+          <div key={index} className="playlist_div">
+            &nbsp;&nbsp;&nbsp;
+              <Link to={`/playlists/${playlist.id}`}>
+                <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;&nbsp;
+                {playlist.name}
+              </Link>
+              <span
+                onClick={() => {if(confirm('Delete this playlist?')) {this.handleClick(playlist.id)};}}
+                >
+                <Glyphicon glyph="remove-circle" className='playlist_delete_glyph'/>
+                </span>
+          { !(playlistLength === index+1) ?  <hr className="playlist_divider"/> : null }
+          </div>
+        )
     })
 
     return (
+      ( playlists.length > 0 ?
       <Col sm={4} md={4} mdOffset={4} id="playlists_container">
-        {playlists}
+         {playlists}
+      </Col> :
+      <Col sm={4} md={4} mdOffset={4} id="playlists_container">
+        <h1>No playlists have been saved. Create a new one above!</h1>
       </Col>
+      )
     )
   }
 }
