@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { Glyphicon } from 'react-bootstrap'
 
 import {createPlaylistVideo, deleteVid} from '../../redux/modules/PlaylistVideos/actions'
-
+import './playlist_dropdown.css'
 
 class DropdownItem extends Component {
   constructor(props) {
@@ -36,8 +36,10 @@ class DropdownItem extends Component {
     return (
       <li key={index} onClick={(e)=>{this.handleClick(e, p)}}>
         { this.state.clicked === false ?
-            <span><Glyphicon className="add_to_playlist_glyph" glyph="heart-empty"/>&nbsp;&nbsp; {p.name}</span> :
-            <span><Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; {p.name}</span>
+            <span className="list_item">
+              <Glyphicon className="add_to_playlist_glyph" glyph="heart-empty"/>&nbsp;&nbsp; {p.name}</span> :
+            <span className="list_item">
+              <Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; {p.name}</span>
            }
         <hr id="menu_divider"/>
       </li>

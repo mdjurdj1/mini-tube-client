@@ -62,3 +62,11 @@ hr#menu_divider {
 #wanna_add:hover {
     color: #CBE1FD;
 }
+
+.list_item {
+  cursor: pointer;
+}
+
+.list_item:hover {
+   text-shadow: 0 0 0.4em black, 0 0 0.4em black;
+}
