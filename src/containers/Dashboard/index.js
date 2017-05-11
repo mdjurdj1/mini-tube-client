@@ -21,7 +21,7 @@ class Dashboard extends Component {
               <h1 id="get_started">Let's get started!</h1>
               <p>Search for videos using the navbar</p>
               <p>Create playlists</p>
-              <p>Save songs to your custom playlists!</p>
+              <p>Save videos to your custom playlists!</p>
             </Col>
           </Row>
           </div>
