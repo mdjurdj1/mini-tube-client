@@ -25,15 +25,14 @@ class PlaylistsVideoList extends Component {
         <div key={index} className="playlist_video_box" >
         <Row>
           <Col md={6} lg={6} mdOffset={3}>
-              <h1 id="vidName" onClick={e=>this.handleClick(e, video)}>{video.name}
-                <Glyphicon
-                  onClick={() => this.handleDelete(video.id)}
-                  glyph="remove" className='playlist_delete_glyph'/>
-              </h1>
               <Video key={index} video={video} videoId={video.videoId}/>
+              <h1 id="vidName" onClick={e=>this.handleClick(e, video)}>{video.name}</h1>
+              <Glyphicon
+                onClick={() => this.handleDelete(video.id)}
+                glyph="remove" className='playlist_video_delete_glyph'
+              />
             </Col>
           </Row>
-
           <hr />
         </div>
       )

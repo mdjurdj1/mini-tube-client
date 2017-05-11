@@ -4,3 +4,9 @@
   color: white;
   text-shadow: 0 0 0.2em blue, 0 0 0.2em blue
 }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}

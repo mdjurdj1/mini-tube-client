@@ -24,9 +24,8 @@ class Playlist extends Component {
   }
 
   render() {
-    debugger
     return (
-    <div>
+    <div className="group">
     { !this.props.playlist ? <h1>'Loading...'</h1> :
         <div className="banner">
           <Row>
@@ -35,7 +34,7 @@ class Playlist extends Component {
             </Col>
           </Row>
         </div>  }
-        <PlaylistVideosList id={this.props.match.params.id} /> 
+        <PlaylistVideosList id={this.props.match.params.id} />
     </div>
     )
   }
