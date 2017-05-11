@@ -22,16 +22,14 @@ class PlaylistsVideoList extends Component {
   render() {
     const videos = this.props.videos.map((video, index) => {
       return (
-        <div key={index}>
-
+        <div key={index} className="playlist_video_box" >
         <Row>
-          <Col md={6} lg={6} mdOffset={3} lgOffset={4} className="playlist_video_box">
+          <Col md={6} lg={6} mdOffset={3}>
               <h1 id="vidName" onClick={e=>this.handleClick(e, video)}>{video.name}
                 <Glyphicon
                   onClick={() => this.handleDelete(video.id)}
                   glyph="remove" className='playlist_delete_glyph'/>
               </h1>
-
               <Video key={index} video={video} videoId={video.videoId}/>
             </Col>
           </Row>

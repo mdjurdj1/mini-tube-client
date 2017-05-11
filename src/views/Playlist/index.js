@@ -24,6 +24,7 @@ class Playlist extends Component {
   }
 
   render() {
+    debugger
     return (
     <div>
     { !this.props.playlist ? <h1>'Loading...'</h1> :
@@ -34,7 +35,7 @@ class Playlist extends Component {
             </Col>
           </Row>
         </div>  }
-      <PlaylistVideosList id={this.props.match.params.id} />
+        <PlaylistVideosList id={this.props.match.params.id} /> 
     </div>
     )
   }

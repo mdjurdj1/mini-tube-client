@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Col, Grid, Row, Button } from 'react-bootstrap'
-import './styles.css'
+import './home.css'
 
 class Home extends Component {
 render() {
@@ -15,7 +15,7 @@ render() {
 
           <Col xs={6} md={4} >
             <h3 id="new_here">Are you new here?</h3>
-            <Button bsStyle="primary" bsSize="large" block onClick={e => this.props.history.push("/signup")} >Sign Up</Button>
+            <Button bsStyle="primary" bsSize="large" id="signup_button" block onClick={e => this.props.history.push("/signup")} >Sign Up</Button>
           </Col>
         </Row>
 
