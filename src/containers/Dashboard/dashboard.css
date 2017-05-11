@@ -15,6 +15,7 @@ h1#get_started {
 }
 
 div.dashboard_container {
+  margin-top: 2em;
   text-align: left;
   font-size: 2em;
   font-family: ‘Arial Black’, Gadget, sans-serif;

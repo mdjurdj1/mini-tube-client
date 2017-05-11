@@ -18,10 +18,10 @@ class Dashboard extends Component {
         <div className="dashboard_container">
           <Row>
             <Col md={4} mdOffset={4}>
-              <h1 id="get_started">Let's get started!</h1>
-              <p>Search for videos using the navbar</p>
-              <p>Create playlists</p>
-              <p>Save videos to your custom playlists!</p>
+              <p>Let's get started!</p>
+              <p>&nbsp;&nbsp;Create playlists</p>
+              <p>&nbsp;&nbsp;&nbsp;Search for videos using the navbar</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save videos to your custom playlists!</p>
             </Col>
           </Row>
           </div>
