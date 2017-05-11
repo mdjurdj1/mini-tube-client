@@ -24,9 +24,8 @@
   color: white;
   font-size: 105%;
   font-weight: bold;
-  margin-left: 1em;
   padding-top: 1.4em;
-  width: 70%;
+  width: 80%;
   text-shadow: 0 0 0.2em black, 0 0 0.2em black;
 }
 
@@ -51,7 +50,7 @@ hr#menu_divider {
 
 #wanna_add {
   cursor: pointer;
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-weight: bold;
   color: white;
