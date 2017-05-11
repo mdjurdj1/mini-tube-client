@@ -17,11 +17,13 @@ class Video extends Component {
       };
 
       return (
+          <div className="videoWrapper">
             <YouTube
               videoId={this.props.videoId}
               opts={opts}
               onReady={this._onReady}
             />
+            </div>
       );
     }
 
