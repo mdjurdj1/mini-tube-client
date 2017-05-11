@@ -5,3 +5,10 @@
   background-size: cover;
   height: 130%
 }
+
+#search_header {
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  text-shadow: 0 0 0.2em blue, 0 0 0.2em blue;
+}

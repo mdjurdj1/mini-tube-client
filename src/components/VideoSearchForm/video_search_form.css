@@ -3,19 +3,20 @@
 }
 
 .control-label {
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: ‘Arial Black’, Gadget, sans-serif;
     font-weight: bold;
-    color: white;
-    text-shadow: 0 0 0.2em black, 0 0 0.2em black;
+    color: black;
+
 }
 
 
 #formInlineSearch {
-  width: 20em;
+  margin: 1em;
+  width: 30em;
 }
 
 #search {
-  color: #4B7DAE;
+  color: white;
   font-size: 110%
 }

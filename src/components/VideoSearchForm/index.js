@@ -29,14 +29,14 @@ class VideoSearchForm extends Component {
       <div className="VideoSearchForm">
         <Form inline onSubmit={(e)=>this.handleSubmit(e)}>
           <FormGroup controlId="formInlineSearch">
-            <ControlLabel>Search</ControlLabel> &nbsp;
+            <ControlLabel>Search For...</ControlLabel> &nbsp;
               <FormControl
                 value={this.state.input}
                 onChange={(e)=>this.handleChange(e)}
                 type="text"
                 placeholder="Hydraulic Press..."
               />
-            <Button type='submit' id="search_submit"><Glyphicon glyph="search" id="search"/></Button>
+            <Button type='submit' id="search_submit" bsStyle="primary" ><Glyphicon glyph="search" id="search"/></Button>
           </FormGroup>
         </Form>
       </div>
