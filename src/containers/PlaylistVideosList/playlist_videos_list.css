@@ -1,4 +1,5 @@
 h1#vidName {
+  float:left;
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-size: 170%;
   font-weight: bold;
@@ -6,13 +7,11 @@ h1#vidName {
 }
 
 .playlist_delete_glyph {
-  font-size: 130%;
-  float:right;
+  margin-left: 2em;
 }
 
-#playlist_videos_container {
-  margin-top: 4em;
-  width: 33%
+div.playlist_video_box {
+  margin-top: 2em;
 }
 
 .video_box {

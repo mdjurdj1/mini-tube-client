@@ -17,13 +17,11 @@ class Video extends Component {
       };
 
       return (
-          <div className='responsive_video'>
             <YouTube
               videoId={this.props.videoId}
               opts={opts}
               onReady={this._onReady}
             />
-        </div>
       );
     }
 

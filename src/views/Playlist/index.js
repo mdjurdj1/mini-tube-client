@@ -23,15 +23,10 @@ class Playlist extends Component {
     this.props.resetPlaylist()
   }
 
-  // handleClick(e) {
-  //   let id = this.props.match.params.id
-  //   this.props.getPlaylistVideos(id)
-  // }
-
   render() {
     return (
     <div>
-    { !this.props.playlist ? <h1>'Playlist Not found!'</h1> :
+    { !this.props.playlist ? <h1>'Loading...'</h1> :
         <div className="banner">
           <Row>
             <Col xs={12} md={12} id="bufferCol">

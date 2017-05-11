@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Col, Glyphicon } from 'react-bootstrap'
+import { Col, Row, Glyphicon } from 'react-bootstrap'
 import Video from '../../components/Video'
 import { getVid } from '../../redux/modules/Video/actions';
 import { deleteVid } from '../../redux/modules/PlaylistVideos/actions'
@@ -23,20 +23,27 @@ class PlaylistsVideoList extends Component {
     const videos = this.props.videos.map((video, index) => {
       return (
         <div key={index}>
-          <h1 id="vidName" onClick={e=>this.handleClick(e, video)}>{video.name}
-            <Glyphicon
-              onClick={() => this.handleDelete(video.id)}
-              glyph="remove" className='playlist_delete_glyph'/>
-          </h1>
-          <Video key={index} video={video} videoId={video.videoId}/>
+
+        <Row>
+          <Col md={6} lg={6} mdOffset={3} lgOffset={4} className="playlist_video_box">
+              <h1 id="vidName" onClick={e=>this.handleClick(e, video)}>{video.name}
+                <Glyphicon
+                  onClick={() => this.handleDelete(video.id)}
+                  glyph="remove" className='playlist_delete_glyph'/>
+              </h1>
+
+              <Video key={index} video={video} videoId={video.videoId}/>
+            </Col>
+          </Row>
+
           <hr />
         </div>
       )
     })
     return (
-        <Col sm={5} md={5} mdOffset={4} id="playlist_videos_container">
+        <div>
           {videos}
-        </Col>
+        </div>
     )
   }
 }
