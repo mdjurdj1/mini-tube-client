@@ -13,7 +13,7 @@ type Props = {
 
 class Login extends Component {
 
-  componentWillUnmount() {
+  componentDidMount() {
     this.props.resetErrors()
   }
 

@@ -12,7 +12,7 @@ import SignupForm from './SignupForm';
 
 class Signup extends Component {
 
-  componentWillUnmount() {
+  componentDidMount() {
     this.props.resetErrors()
   }
 
