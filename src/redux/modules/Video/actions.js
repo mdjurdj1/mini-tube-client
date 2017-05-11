@@ -3,7 +3,7 @@ import querystring from 'querystring'
 
 // import checkStatus from './fetch/check-status'
 // import parseJSON from './fetch/parse-json'
-// test new api keys
+// api keys now working
 
 const SEARCH_URL = `https://www.googleapis.com/youtube/v3/search`
 const key = process.env.REACT_APP_YOUTUBE_API_KEY
