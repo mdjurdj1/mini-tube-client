@@ -41,11 +41,11 @@ hr#menu_divider {
   color: #23A5BB;
 }
 
-#checked {
+.add_to_playlist_glyph {
   font-size: 120%;
 }
 
-#checked:hover {
+.add_to_playlist_glyph:hover {
   color: red;
   cursor: pointer;
 }
