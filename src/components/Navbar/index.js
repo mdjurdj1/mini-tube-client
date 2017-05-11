@@ -31,7 +31,10 @@ class navbarInstance extends Component {
       <Navbar.Header>
         <Navbar.Brand>
           <Glyphicon id='logo' glyph="play-circle"/>&nbsp;
-          <a id="brand" onClick={ e => this.props.history.push("/") }>Mini-Tube</a>
+          {this.props.isAuthenticated ?
+            <a id="brand" onClick={ e => this.props.history.push("/dashboard") }>Mini-Tube</a> :
+            <a id="brand" onClick={ e => this.props.history.push("/") }>Mini-Tube</a>
+          }
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
