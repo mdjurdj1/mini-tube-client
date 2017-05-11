@@ -26,6 +26,9 @@ export default (state = initialState, action) => {
     case 'CREATE_USER_FAILURE':
       return Object.assign({}, initialState, { isAuthenticating: false, errors: action.errors })
 
+    case 'RESET_ERRORS':
+      return Object.assign({}, initialState, { isAuthenticating: false })
+
     case 'LOGOUT':
       return Object.assign({}, initialState, { isAuthenticating: false });
 

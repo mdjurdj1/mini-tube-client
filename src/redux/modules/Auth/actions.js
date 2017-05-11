@@ -27,6 +27,10 @@ export const createUserFailure = (errors) => {
   return { type: 'CREATE_USER_FAILURE', errors}
 }
 
+export const resetErrors = () => {
+  return { type: 'RESET_ERRORS' }
+}
+
 
 export const signup = (user, router) => {
   return dispatch => {

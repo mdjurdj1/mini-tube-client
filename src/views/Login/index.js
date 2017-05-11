@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Col, Row, Glyphicon } from 'react-bootstrap'
-import { login } from '../../redux/modules/Auth/actions';
+import { login, resetErrors } from '../../redux/modules/Auth/actions';
 import ErrorAlert from '../../components/Errors/error_alert_box'
 import LoginForm from './LoginForm';
 import './login.css'
@@ -12,6 +12,10 @@ type Props = {
 }
 
 class Login extends Component {
+
+  componentWillUnmount() {
+    this.props.resetErrors()
+  }
 
   static contextTypes = {
     router: PropTypes.object,
@@ -44,4 +48,4 @@ function mapStateToProps(state) {
   return { errors: state.auth.errors }
 }
 
-export default connect(mapStateToProps, { login })(Login);
+export default connect(mapStateToProps, { login, resetErrors })(Login);

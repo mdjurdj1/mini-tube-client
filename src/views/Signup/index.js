@@ -6,11 +6,15 @@ import {Row, Col} from 'react-bootstrap'
 
 //import local modules
 import ErrorAlert from '../../components/Errors/error_alert_box'
-import { signup } from '../../redux/modules/Auth/actions';
+import { signup, resetErrors } from '../../redux/modules/Auth/actions';
 import SignupForm from './SignupForm';
 
 
 class Signup extends Component {
+
+  componentWillUnmount() {
+    this.props.resetErrors()
+  }
 
   static contextTypes = {
     router: PropTypes.object
@@ -41,4 +45,4 @@ class Signup extends Component {
 function mapStateToProps(state){
   return { errors: state.auth.errors }
 }
-export default connect(mapStateToProps, { signup })(Signup);
+export default connect(mapStateToProps, { signup, resetErrors })(Signup);
