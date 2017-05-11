@@ -19,7 +19,7 @@ class PlaylistsContainer extends Component {
   }
 
   render() {
-
+    let playlistLength = this.props.playlists.length
     const playlists = this.props.playlists.map((playlist, index) => {
       return (
         <div key={index} className="playlist_div">
@@ -33,7 +33,7 @@ class PlaylistsContainer extends Component {
               >
               <Glyphicon glyph="remove" className='playlist_delete_glyph'/>
               </span>
-          <hr />
+        { !(playlistLength === index+1) ?  <hr className="playlist_divider"/> : null }
         </div>
       )
     })

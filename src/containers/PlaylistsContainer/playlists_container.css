@@ -18,6 +18,13 @@ h1 {
     -webkit-border-radius: 10px;
 }
 
+hr.playlist_divider {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: #C1D7FE;
+}
+
 .playlist_div {
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-size: 130%;
