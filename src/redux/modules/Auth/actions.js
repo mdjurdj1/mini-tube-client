@@ -23,6 +23,10 @@ export const authenticationFailure = (errors) => {
   return { type: 'AUTHENTICATION_FAILURE', errors };
 }
 
+export const createUserFailure = (errors) => {
+  return { type: 'CREATE_USER_FAILURE', errors}
+}
+
 
 export const signup = (user, router) => {
   return dispatch => {
@@ -37,6 +41,7 @@ export const signup = (user, router) => {
       })
       .catch((err) => {
         console.log(err)
+        dispatch(createUserFailure(err))
         throw new SubmissionError(err)
       })
   }

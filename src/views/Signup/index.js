@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import {Row, Col} from 'react-bootstrap'
 
 //import local modules
+import ErrorAlert from '../../components/Errors/error_alert_box'
 import { signup } from '../../redux/modules/Auth/actions';
 import SignupForm from './SignupForm';
 
@@ -24,6 +25,7 @@ class Signup extends Component {
         <Col sm={4} md={4} />
         <Col sm={4} md={4} id="signup_box">
           <h1 id="signup_header">Join Mini-Tube today!</h1>
+          { this.props.errors ? <ErrorAlert /> : null }
           <SignupForm onSubmit={this.handleSignup} />
 
           <hr />
@@ -36,4 +38,7 @@ class Signup extends Component {
   }
 }
 
-export default connect(null, { signup })(Signup);
+function mapStateToProps(state){
+  return { errors: state.auth.errors }
+}
+export default connect(mapStateToProps, { signup })(Signup);

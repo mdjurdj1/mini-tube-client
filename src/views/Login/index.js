@@ -3,8 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Col, Row, Glyphicon } from 'react-bootstrap'
 import { login } from '../../redux/modules/Auth/actions';
-import ErrorAlert from './error_alert'
+import ErrorAlert from '../../components/Errors/error_alert_box'
 import LoginForm from './LoginForm';
+import './login.css'
 
 type Props = {
   login: () => void,
@@ -26,7 +27,7 @@ class Login extends Component {
         <Col sm={4} md={4} />
         <Col sm={4} md={4} id="login_box">
           <h1 id="login_header">Log in to Mini-Tube</h1>
-          { this.props.errors ? <ErrorAlert errors={this.props.errors.email} /> : null }
+          { this.props.errors ? <ErrorAlert /> : null }
           <LoginForm onSubmit={this.handleLogin} />
 
           <hr />
