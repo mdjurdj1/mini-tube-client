@@ -60,7 +60,7 @@
   cursor: pointer;
 }
 
-li {
+li.dropdown_li {
   margin-bottom: 1em;
 }
 

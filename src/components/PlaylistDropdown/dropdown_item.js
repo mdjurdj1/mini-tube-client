@@ -34,7 +34,7 @@ class DropdownItem extends Component {
     const p = this.props.playlist
     const index = this.props.key
     return (
-      <li key={index} onClick={(e)=>{this.handleClick(e, p)}}>
+      <li className="dropdown_li" key={index} onClick={(e)=>{this.handleClick(e, p)}}>
         { this.state.clicked === false ?
             <span className="list_item">
               <Glyphicon className="add_to_playlist_glyph" glyph="heart-empty"/>&nbsp;&nbsp; {p.name}</span> :
