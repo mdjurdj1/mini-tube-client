@@ -56,7 +56,7 @@ class SignupForm extends Component {
       email: "",
       password: "",
       emailErrors: {},
-      passwordError: {}
+      passwordErrors: {}
     }
   }
 
@@ -65,7 +65,7 @@ class SignupForm extends Component {
   handleSubmit = data => this.props.onSubmit(data);
 
   handleChange(e) {
-    if (e.target.name === "username") {
+    if (e.target.name === "email") {
       this.setState({
         emailErrors: validateEmail({email: e.target.value}),
         email: e.target.value
@@ -87,7 +87,7 @@ class SignupForm extends Component {
         <p className="control">
           <Field
             name="email"
-            value={this.state.username}
+            value={this.state.email}
             onChange={e=>this.handleChange(e)}
             className="input"
             component="input"
@@ -95,7 +95,7 @@ class SignupForm extends Component {
             placeholder="Email address..."
           />
         </p>
-        {this.state.emailErrors !== {} ? <p className="help is-danger">{this.state.emailErrors.email}</p> : null}
+        {this.state.emailErrors !== {} ? <p className="reg_errors">{this.state.emailErrors.email}</p> : null}
       </div>
 
       <div className="field">
@@ -111,7 +111,7 @@ class SignupForm extends Component {
             placeholder="Password"
           />
         </p>
-        {this.state.passwordErrors ? <p className="help is-danger">{this.state.passwordErrors.password}</p> : null}
+        {this.state.passwordErrors ? <p className="reg_errors">{this.state.passwordErrors.password}</p> : null}
       </div>
       <div className="field">
         <p className="control">
