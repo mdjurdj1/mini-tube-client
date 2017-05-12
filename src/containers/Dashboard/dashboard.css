@@ -10,10 +10,6 @@ h1#dashboard_h1 {
   text-align: center;
 }
 
-h1#get_started {
-  color: white;
-}
-
 div.dashboard_container {
   margin-top: 2em;
   text-align: left;
@@ -22,4 +18,18 @@ div.dashboard_container {
   font-weight: bold;
   color: white;
   text-shadow: 0 0 0.2em black, 0 0 0.2em black;
+}
+
+.dash_text {
+  margin-left: 2em;
+}
+
+.dashboard_glyph {
+  color: #4FCFE2
+}
+
+hr#dash_hr {
+  border: none;
+  height: 1px;
+  background-color: #4FCFE2;
 }

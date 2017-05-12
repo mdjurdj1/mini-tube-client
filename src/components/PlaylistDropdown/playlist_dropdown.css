@@ -49,14 +49,11 @@ li.dropdown_li {
 span.li_text {
   margin-left: 1em;
 }
-.list_item:hover {
-
-}
 
 div.add_to_playlist_container.col-md-2 {
   padding-left: 0;
   padding-right: 0;
-  padding-bottom: 0.5em;
+  padding-bottom: 0.8em;
 }
 
 hr.menu-item-divider {

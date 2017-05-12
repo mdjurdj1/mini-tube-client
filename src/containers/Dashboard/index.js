@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Row, Col} from 'react-bootstrap'
+import {Row, Col, Glyphicon} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import './dashboard.css'
 
@@ -18,10 +18,20 @@ class Dashboard extends Component {
         <div className="dashboard_container">
           <Row>
             <Col md={4} mdOffset={4}>
-              <p>Let's get started!</p>
-              <p>&nbsp;&nbsp;Create playlists</p>
-              <p>&nbsp;&nbsp;&nbsp;Search for videos using the navbar</p>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save videos to your custom playlists!</p>
+              <p>Here's how to get started!</p>
+              <hr id="dash_hr"/>
+              <p>
+                <Glyphicon className="dashboard_glyph" glyph="align-left"/>
+                <span className="dash_text">Create playlists </span>
+              </p>
+              <p>
+                <Glyphicon className="dashboard_glyph" glyph="search"/>
+                <span className="dash_text">Search for videos using the navbar</span>
+              </p>
+              <p>
+                <Glyphicon className="dashboard_glyph" glyph="heart"/>
+                <span className="dash_text">Save videos to your custom playlists!</span>
+              </p>
             </Col>
           </Row>
           </div>
