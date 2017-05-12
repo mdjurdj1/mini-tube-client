@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import {Row, Col} from 'react-bootstrap'
+import {Row, Col, Glyphicon} from 'react-bootstrap'
 
 //import local modules
 import ErrorAlert from '../../components/Errors/error_alert_box'
 import { signup, resetErrors } from '../../redux/modules/Auth/actions';
 import SignupForm from './SignupForm';
-
+import './signup.css'
 
 class Signup extends Component {
 
@@ -32,10 +32,12 @@ class Signup extends Component {
           { this.props.errors ? <ErrorAlert /> : null }
           <SignupForm onSubmit={this.handleSignup} />
 
-          <hr />
+          <hr id="blue_hr" />
 
-          <p>Already have an account?</p>
-          <NavLink to="/login">Login Here</NavLink>
+          <div className="already_reg">
+            <p>Already have an account?</p>
+            <NavLink to="/login"><Glyphicon glyph="user"/>&nbsp;&nbsp;Login Here</NavLink>
+          </div>
         </Col>
       </Row>
     )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import './styles.css'
+import { Button } from 'react-bootstrap'
+import './signup.css'
 
 type Props = {
   submitting: boolean,
@@ -115,7 +116,9 @@ class SignupForm extends Component {
       </div>
       <div className="field">
         <p className="control">
-          <button type="submit" className="button is-success" disabled={pristine || submitting}>{ submitting ? 'Loading...' : 'Sign Up'}</button>
+          <Button bsStyle="primary" type="submit" className="signup-button" disabled={pristine || submitting}>
+              { submitting ? 'Loading...' : 'Sign Up'}
+            </Button>
         </p>
       </div>
     </form>

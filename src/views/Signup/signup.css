@@ -25,3 +25,19 @@ h1#signup_header {
 .reg_errors {
   font-weight: bold;
 }
+
+hr#blue_hr {
+  border: none;
+  height: 2px;
+  background-color: #6295FA;
+}
+
+.signup-button {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.already_reg {
+  font-weight: bold;
+  font-size: 1.0em;
+}
