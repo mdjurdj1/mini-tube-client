@@ -32,18 +32,22 @@ class DropdownItem extends Component {
 
   render() {
     const p = this.props.playlist
+    // const playlistsLength = this.props.playlists.length
     const index = this.props.key
     return (
       <li className="dropdown_li" key={index} onClick={(e)=>{this.handleClick(e, p)}}>
         { this.state.clicked === false ?
-            <span className="list_item">
-              <Glyphicon className="add_to_playlist_glyph" glyph="heart-empty"/>&nbsp;&nbsp; {p.name}</span> :
-            <span className="list_item">
-              <Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; {p.name}</span>
+            <span>
+              <Glyphicon className="add_to_playlist_glyph" glyph="heart-empty"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>
+              </span> :
+            <span>
+              <Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>
+            </span>
            }
       </li>
     )
   }
 }
+
 
 export default connect(null, {createPlaylistVideo, deleteVid})(DropdownItem)
