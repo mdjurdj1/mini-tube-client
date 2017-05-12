@@ -4,6 +4,7 @@ import {Glyphicon} from 'react-bootstrap'
 import {connect} from 'react-redux'
 
 import DropdownItem from './dropdown_item'
+import DropdownCreateBox from './dropdown_create_new_input.js'
 import {createPlaylistVideo} from '../../redux/modules/PlaylistVideos/actions'
 import './playlist_dropdown.css'
 
@@ -12,7 +13,8 @@ class PlaylistDropdown extends Component {
     super(props);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.state = {
-      menuActive: false
+      menuActive: false,
+      createBoxActive: false
     };
   }
 
@@ -38,6 +40,7 @@ class PlaylistDropdown extends Component {
                 <ul id="dropdown_ul">
                   {items}
                 </ul>
+                  <DropdownCreateBox />
               </div>
     } else {
       menu = "";

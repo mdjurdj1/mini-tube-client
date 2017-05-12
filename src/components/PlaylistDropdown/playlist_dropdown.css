@@ -9,19 +9,6 @@
   width: 100%;
 }
 
-#plus {
-  color: #2B71C4;
-  cursor: pointer;
-}
-
-.add_to_playlist_glyph {
-  font-size: 120%;
-}
-
-.add_to_playlist_glyph:hover {
-  color: red;
-  cursor: pointer;
-}
 
 div#menu {
   text-align: center
@@ -47,7 +34,7 @@ li.dropdown_li {
   padding-top: 0.5em;
   padding-bottom: 0.3em;
   padding-left: 1em;
-  border-top: 2px solid rgba(0,0,0,.2);
+  border-top: 1px solid rgba(0,0,0,.2);
 }
 
 span.li_text {
@@ -92,4 +79,25 @@ hr.menu-item-divider {
   overflow: hidden;
   max-height: 0px; }
 
-/*=================================================================*/
+
+/*=======================================GLYPHICON STYLING*/
+
+.add_to_playlist_glyph {
+  font-size: 120%;
+}
+
+.add_to_playlist_glyph:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#plus {
+  color: #2B71C4;
+  cursor: pointer;
+}
+
+/*=======================================CREATE BOX CONTAINER*/
+
+div.create_box_container {
+  border-top: 1px solid rgba(0,0,0,.5);
+}
