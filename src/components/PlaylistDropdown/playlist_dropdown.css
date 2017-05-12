@@ -23,6 +23,10 @@
   cursor: pointer;
 }
 
+div#menu {
+  text-align: center
+}
+
 #add_this_video_to_a_playlist {
   cursor: pointer;
   font-size: 1.1em;

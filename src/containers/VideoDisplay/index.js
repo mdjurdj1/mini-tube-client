@@ -16,8 +16,8 @@ class VideoList extends Component {
           <Col md={4} mdOffset={3}>
             <Video key={index} video={video} videoId={video.id.videoId}/>
           </Col>
-          <Col md={2} className="add_to_playlist_container">
-              <PlaylistDropdown video={video}/>
+          <Col md={2}>
+              <div className="add_to_playlist_container"><PlaylistDropdown video={video}/></div>
           </Col>
         </Row>
         <hr />
@@ -26,7 +26,7 @@ class VideoList extends Component {
     })
 
     return (
-      <div id="video_container">
+      <div>
       {videos}
       </div>
     )

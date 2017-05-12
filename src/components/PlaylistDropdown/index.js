@@ -45,7 +45,7 @@ class PlaylistDropdown extends Component {
     return (
       <div id="menu">
       <span id="add_this_video_to_a_playlist" onClick={this.toggleMenu}>
-         <Glyphicon glyph="chevron-down" id='plus' />&nbsp;&nbsp;Add this video to a playlist!
+         <Glyphicon glyph="chevron-down" id='plus' />&nbsp;&nbsp;Add to playlist!
       </span>
       <ReactCSSTransitionGroup transitionName="menu" transitionEnterTimeout={1000} transitionLeaveTimeout={1000}>
         {menu}
