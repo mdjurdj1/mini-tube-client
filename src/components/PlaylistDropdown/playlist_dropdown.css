@@ -56,6 +56,7 @@ span.li_text {
 div.add_to_playlist_container.col-md-2 {
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 0;
 }
 
 hr.menu-item-divider {
