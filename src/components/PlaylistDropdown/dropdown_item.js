@@ -32,7 +32,6 @@ class DropdownItem extends Component {
 
   render() {
     const p = this.props.playlist
-    // const playlistsLength = this.props.playlists.length
     const index = this.props.key
     return (
       <li className="dropdown_li" key={index} onClick={(e)=>{this.handleClick(e, p)}}>
