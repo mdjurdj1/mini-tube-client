@@ -116,7 +116,7 @@ class SignupForm extends Component {
       </div>
       <div className="field">
         <p className="control">
-          <Button bsStyle="primary" type="submit" className="signup-button" disabled={pristine || submitting}>
+          <Button bsStyle="primary" type="submit" className="reg-button" disabled={pristine || submitting}>
               { submitting ? 'Loading...' : 'Sign Up'}
             </Button>
         </p>

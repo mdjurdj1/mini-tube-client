@@ -26,13 +26,13 @@ h1#signup_header {
   font-weight: bold;
 }
 
-hr#blue_hr {
+hr#blue_signup_hr {
   border: none;
   height: 2px;
   background-color: #6295FA;
 }
 
-.signup-button {
+.reg-button {
   font-weight: bold;
   margin-top: 1em;
 }

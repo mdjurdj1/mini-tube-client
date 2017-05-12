@@ -32,7 +32,7 @@ class Signup extends Component {
           { this.props.errors ? <ErrorAlert /> : null }
           <SignupForm onSubmit={this.handleSignup} />
 
-          <hr id="blue_hr" />
+          <hr id="blue_signup_hr" />
 
           <div className="already_reg">
             <p>Already have an account?</p>

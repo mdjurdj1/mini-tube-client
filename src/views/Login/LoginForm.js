@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Button } from 'react-bootstrap'
 import './login.css'
 
 type Props = {
@@ -56,7 +57,7 @@ class LoginForm extends Component {
       email: "",
       password: "",
       emailErrors: {},
-      passwordError: {}
+      passwordErrors: {}
     }
   }
 
@@ -87,7 +88,7 @@ class LoginForm extends Component {
         <p className="control">
           <Field
             name="email"
-            value={this.state.username}
+            value={this.state.email}
             onChange={e=>this.handleChange(e)}
             className="input"
             component="input"
@@ -95,7 +96,7 @@ class LoginForm extends Component {
             placeholder="Email address..."
           />
         </p>
-        {this.state.emailErrors !== {} ? <p className="help is-danger">{this.state.emailErrors.email}</p> : null}
+        {this.state.emailErrors !== {} ? <p className="reg_errors">{this.state.emailErrors.email}</p> : null}
       </div>
 
       <div className="field">
@@ -111,11 +112,11 @@ class LoginForm extends Component {
             placeholder="Password"
           />
         </p>
-        {this.state.passwordErrors ? <p className="help is-danger">{this.state.passwordErrors.password}</p> : null}
+        {this.state.passwordErrors ? <p className="reg_errors">{this.state.passwordErrors.password}</p> : null}
       </div>
       <div className="field">
         <p className="control">
-          <button type="submit" className="button is-success" disabled={pristine || submitting}>{ submitting ? 'Loading...' : 'Log in'}</button>
+          <Button bsStyle='primary' type="submit" className="reg-button" disabled={pristine || submitting}>{ submitting ? 'Loading...' : 'Log in'}</Button>
         </p>
       </div>
     </form>

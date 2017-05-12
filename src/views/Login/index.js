@@ -34,10 +34,12 @@ class Login extends Component {
           { this.props.errors ? <ErrorAlert /> : null }
           <LoginForm onSubmit={this.handleLogin} />
 
-          <hr />
+          <hr id="blue_login_hr" />
 
-          <p>Dont have an account?</p>
-          <NavLink to="/signup" id="signup_link"><Glyphicon glyph="share-alt" />  Create new account </NavLink>
+          <div className="already_reg">
+            <p>Dont have an account?</p>
+            <NavLink to="/signup" id="signup_link"><Glyphicon glyph="share-alt" />  Create new account </NavLink>
+          </div>
         </Col>
       </Row>
     )

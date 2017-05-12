@@ -19,8 +19,15 @@ h1#login_header {
     padding-right: 5em;
     box-shadow: 0px 20px 40px rgba(0,0,0,.65);
     background-color: #BBD2FA;
-    /*border: #cdcdcd medium solid;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;*/
+}
+
+.login-button {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+hr#blue_login_hr {
+  border: none;
+  height: 1px;
+  background-color: #6295FA;
 }
