@@ -29,7 +29,7 @@ class VideoList extends Component {
      this.props.loading ?
         <div className="loader"></div>
         :
-        <div>{videos}</div>
+        <div className="search_results">{videos}</div>
     )
   }
 }

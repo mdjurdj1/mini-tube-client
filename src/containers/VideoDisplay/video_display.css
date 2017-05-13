@@ -1,6 +1,6 @@
 #video_container {
   text-align: center;
-  padding: 1em
+  padding: 1em;
 }
 
 .add_to_playlist_container {
@@ -16,11 +16,18 @@
 .add_button {
   padding-top: 2em;
   padding-bottom: 2em;
+    box-shadow: 5px 10px 20px rgba(0,0,0,.5);
 }
 
 hr#video_list_hr {
   width:90%;
- border: 1px solid white;
+  border: none;
+  height: 1px;
+  background-color: #6295FA;
+}
+
+div.search_results {
+  margin-top: 2em;
 }
 
 /*===========================================================LOADER */

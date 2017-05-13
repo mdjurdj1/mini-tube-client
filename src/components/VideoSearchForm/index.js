@@ -34,7 +34,7 @@ class VideoSearchForm extends Component {
                 value={this.state.input}
                 onChange={(e)=>this.handleChange(e)}
                 type="text"
-                placeholder="Hydraulic Press..."
+                placeholder="Kittens and puppers..."
               />
             <Button type='submit' id="search_submit" bsStyle="primary" ><Glyphicon glyph="search" id="search"/></Button>
           </FormGroup>
