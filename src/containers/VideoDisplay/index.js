@@ -20,21 +20,22 @@ class VideoList extends Component {
               <div className="add_to_playlist_container"><PlaylistDropdown video={video}/></div>
           </Col>
         </Row>
-        <hr />
+        <hr id="video_list_hr"/>
       </div>
       )
     })
 
     return (
-      <div>
-      {videos}
-      </div>
+     this.props.loading ?
+        <div className="loader"></div>
+        :
+        <div>{videos}</div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return { videos: state.videos.links, playlists: state.playlists.playlists }
+  return { videos: state.videos.links, playlists: state.playlists.playlists, loading: state.videos.loading }
 }
 
 export default connect(mapStateToProps)(VideoList)
