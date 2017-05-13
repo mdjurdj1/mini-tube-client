@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+
 import './dashboard.css'
 
 class Dashboard extends Component {
@@ -15,6 +16,7 @@ class Dashboard extends Component {
             </Col>
           </Row>
         </div>
+
 
         <div className="dashboard_container">
           <Row>

@@ -10,14 +10,10 @@ import './styles.css'
 
 class Playlist extends Component {
 
-  componentWillMount() {
-    let id = this.props.match.params.id
-    this.props.getPlaylistVideos(id)
-  }
-
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.getPlaylist(id)
+    this.props.getPlaylistVideos(id)
   }
 
   componentWillUnmount() {

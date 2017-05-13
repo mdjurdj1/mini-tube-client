@@ -17,9 +17,9 @@ import Playlists from '../views/Playlists'
 import Dashboard from '../containers/Dashboard'
 import Background from '../../public/background.jpg'
 
+
 import {withRouter} from 'react-router'
 import Navbar from '../components/Navbar'
-
 import MatchAuthenticated from '../components/MatchAuthenticated/';
 import RedirectUnauthenticated from '../components/RedirectUnauthenticated/';
 // import NestedMatchAuthenticated from '../components/NestedMatchAuthenticated/';
@@ -67,17 +67,17 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <NavigationWithRouter isAuthenticated={isAuthenticated} logout={logout} />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps} />
-            <MatchAuthenticated exact path="/playlists/:id" component={Playlist} {...authProps} />
-            <MatchAuthenticated exact path="/dashboard" component={Dashboard} {...authProps}/>
-            <MatchAuthenticated exact path="/search" component={Search} {...authProps} />
-            <RedirectUnauthenticated path="/login" exact component={Login} {...authProps} />
-            <RedirectUnauthenticated path="/signup" exact component={Signup} {...authProps} />
-            <Route component={NotFound} />
-          </Switch>
+          <NavigationWithRouter isAuthenticated={isAuthenticated} logout={logout} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <MatchAuthenticated exact path="/playlists" component={Playlists} {...authProps} />
+              <MatchAuthenticated exact path="/playlists/:id" component={Playlist} {...authProps} />
+              <MatchAuthenticated exact path="/dashboard" component={Dashboard} {...authProps}/>
+              <MatchAuthenticated exact path="/search" component={Search} {...authProps} />
+              <RedirectUnauthenticated path="/login" exact component={Login} {...authProps} />
+              <RedirectUnauthenticated path="/signup" exact component={Signup} {...authProps} />
+              <Route component={NotFound} />
+            </Switch>
         </div>
       </Router>
     );
