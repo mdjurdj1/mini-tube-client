@@ -35,7 +35,7 @@ class VideoList extends Component {
 }
 
 function mapStateToProps(state) {
-  return { videos: state.videos.links, playlists: state.playlists.playlists, loading: state.videos.loading }
+  return { videos: state.videos.links, loading: state.videos.loading }
 }
 
 export default connect(mapStateToProps)(VideoList)
