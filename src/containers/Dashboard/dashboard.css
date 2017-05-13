@@ -21,10 +21,11 @@ div.dashboard_container {
 }
 
 .dash_text {
-  margin-left: 2em;
+  margin-left: 1.2em;
 }
 
 .dashboard_glyph {
+  margin-top: 0.2em;
   color: #4FCFE2
 }
 
@@ -32,4 +33,9 @@ hr#dash_hr {
   border: none;
   height: 1px;
   background-color: #4FCFE2;
+}
+
+a.dash_link {
+  color: white;
+  text-decoration: none;
 }

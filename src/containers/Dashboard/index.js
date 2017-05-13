@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Row, Col, Glyphicon} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './dashboard.css'
 
@@ -22,11 +23,11 @@ class Dashboard extends Component {
               <hr id="dash_hr"/>
               <p>
                 <Glyphicon className="dashboard_glyph" glyph="align-left"/>
-                <span className="dash_text">Create playlists </span>
+                <span className="dash_text"><Link className="dash_link" to='/playlists'>Create playlists</Link> </span>
               </p>
               <p>
                 <Glyphicon className="dashboard_glyph" glyph="search"/>
-                <span className="dash_text">Search for videos using the navbar</span>
+                <span className="dash_text"><Link className="dash_link" to='/search'>Search for videos using the navbar</Link></span>
               </p>
               <p>
                 <Glyphicon className="dashboard_glyph" glyph="heart"/>
