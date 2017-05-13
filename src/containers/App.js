@@ -56,6 +56,7 @@ class App extends Component {
  componentWillMount() {
     document.body.style.backgroundImage = `url(${Background})`;
     document.body.style.backgroundRepeat = "no-repeat"
+    document.body.style.backgroundAttachment = "fixed"
 }
 
   render() {
