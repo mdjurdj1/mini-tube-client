@@ -26,7 +26,7 @@ class Playlist extends Component {
 
   render() {
     return (
-    <div>
+    <div className="playlist_view">
     { !this.props.playlist ? <h1>'Loading...'</h1> :
         <div className="banner">
           <Row>

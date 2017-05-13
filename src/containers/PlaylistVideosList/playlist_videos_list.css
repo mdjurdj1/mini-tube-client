@@ -6,10 +6,10 @@ h1#vidName {
   color: black;
 }
 
-hr.playlist_divider#playlistVideosDivider {
+hr#playlistVideosDivider {
   width: 90%;
   border: none;
-  height: .5px;
+  height: 1px;
   background-color: #5A68A6;
 }
 

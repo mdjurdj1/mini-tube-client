@@ -20,7 +20,7 @@ class PlaylistsVideoList extends Component {
   }
 
   render() {
-    let videosLength = this.props.videos.length
+    const videosLength = this.props.videos.length
     const videos = this.props.videos.map((video, index) => {
       return (
         <div key={index} className="playlist_video_box" >
@@ -36,7 +36,6 @@ class PlaylistsVideoList extends Component {
               </div>
             </Col>
           </Row>
-          {!(videosLength === index+1) ? <hr className="playlist_divider" id="playlistVideosDivider"/> : null }
         </div>
       )
     })
