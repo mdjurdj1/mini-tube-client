@@ -98,6 +98,23 @@ hr.menu-item-divider {
 
 /*=======================================CREATE BOX CONTAINER*/
 
+div#create_new_text {
+  cursor: pointer;
+  text-align: left;
+  padding-left: 1.3em;
+}
+
+span#new_pl_text {
+  text-align: left;
+  margin-left: 2.0em;
+}
+
 div.create_box_container {
+  padding-top: 1em;
   border-top: 1px solid rgba(0,0,0,.5);
+}
+
+input.new_pl_input {
+  width: 98%;
+  padding: 1%;
 }
