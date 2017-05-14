@@ -41,9 +41,8 @@ class PlaylistsVideoList extends Component {
     })
     return (
       videos.length > 0 ?
-        <div>
-          {videos}
-        </div> :
+        <div>{videos}</div>
+        :
         <Col sm={4} md={4} mdOffset={4} id="playlists_container">
           <h1>No videos have been saved for this playlist yet.</h1>
           <h1><Link to='/search'>Let's Search to find some!</Link></h1>
