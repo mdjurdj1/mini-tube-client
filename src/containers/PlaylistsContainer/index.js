@@ -21,12 +21,13 @@ class PlaylistsContainer extends Component {
   render() {
     let playlistLength = this.props.playlists.length
     const playlists = this.props.playlists.map((playlist, index) => {
+      let videoCount = playlist.video_count === 1 ? `(1 video)` : `(${playlist.video_count} videos)`
       return (
           <div key={index} className="playlist_div">
             &nbsp;&nbsp;&nbsp;
               <Link to={`/playlists/${playlist.id}`}>
-                <Glyphicon glyph="equalizer" id='playlist_glyph'/>&nbsp;&nbsp;
-                {playlist.name}
+                <Glyphicon glyph="expand" id='playlist_glyph'/>&nbsp;&nbsp;&nbsp;&nbsp;
+                {playlist.name} {videoCount}
               </Link>
               <span
                 onClick={() => {if(confirm('Delete this playlist?')) {this.handleClick(playlist.id)};}}
