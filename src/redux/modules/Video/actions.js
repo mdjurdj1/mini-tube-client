@@ -15,7 +15,7 @@ export function searchVids(query) {
     q: query,
     key: key,
     type: `video`,
-    maxResults: 10,
+    maxResults: 7,
     videoEmbeddable: `true`
   }
 
