@@ -15,7 +15,7 @@ hr#playlistVideosDivider {
 
 .playlist_video_delete_glyph {
   padding-right: 1em;
-  padding-top: 0.2em;
+  padding-top: 0.6em;
   float: right;
   margin-top: .5em;
   font-size: 2em;
@@ -32,11 +32,11 @@ div.playlist_video_box {
 }
 
 div.playlist_video_info {
-  font-size: 90%;
-  padding-left: 3em;
+  font-size: 60%;
+  padding-left: 2em;
   background-color: white;
   width: 100%;
-  height: 5em;
+  height: 7em;
   border: 1px solid black;
   border-top: none;
   background-color: #EDF5FF;
