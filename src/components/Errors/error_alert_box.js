@@ -8,7 +8,7 @@ class ErrorAlert extends Component {
     const password_errors = this.props.errors.password
     return (
       <div className="errors_notification">
-        <p>Oops! We found an error with your info:</p>
+        <p>Oops! We found an error with your information:</p>
         { email_errors ? <p><strong>Email: {email_errors}</strong> </p> : null }
         { password_errors ? <p><strong>Password: {password_errors}</strong></p> : null }
       </div>
