@@ -21,6 +21,7 @@ class PlaylistsVideoList extends Component {
 
   render() {
     const videosLength = this.props.videos.length
+
     const videos = this.props.videos.map((video, index) => {
       return (
         <div key={index} className="playlist_video_box" >
@@ -39,20 +40,29 @@ class PlaylistsVideoList extends Component {
         </div>
       )
     })
-    return (
-      videos.length > 0 ?
-        <div>{videos}</div>
-        :
-        <Col sm={4} md={4} mdOffset={4} id="playlists_container">
+
+    let content = null;
+    if(this.props.loading) {
+      content = <div className="loader"></div>
+    } else if(videos.length > 0) {
+      content = <div>{videos}</div>
+    } else {
+      content = <Col sm={4} md={4} mdOffset={4} id="playlists_container">
           <h1>No videos have been saved for this playlist yet.</h1>
-          <h1><Link to='/search'>Let's Search to find some!</Link></h1>
+          <h1><Link to='/search'>Lets Search to find some!</Link></h1>
         </Col>
+    }
+
+    return (
+      <div>
+      {content}
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  return { videos: state.playlistVideos.videos }
+  return { videos: state.playlistVideos.videos, loading: state.playlistVideos.loading }
 }
 
 export default connect(mapStateToProps, {getVid, deleteVid})(PlaylistsVideoList)
