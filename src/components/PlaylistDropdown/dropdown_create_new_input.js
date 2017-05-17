@@ -29,6 +29,7 @@ class DropdownCreateBox extends Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault()
     let playlist_name = this.state.input
     this.props.createPlaylistRequest(playlist_name)
   }
