@@ -32,6 +32,9 @@ class DropdownCreateBox extends Component {
     e.preventDefault()
     let playlist_name = this.state.input
     this.props.createPlaylistRequest(playlist_name)
+    this.setState({
+      createBoxActive: false
+    });
   }
 
   render() {
