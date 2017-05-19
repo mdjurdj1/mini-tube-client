@@ -37,7 +37,7 @@ class DropdownItem extends Component {
       <li className="dropdown_li" key={index} onClick={(e)=>{this.handleClick(e, p)}}>
         { this.state.clicked === false ?
             <span>
-              <Glyphicon className="add_to_playlist_glyph" glyph="heart-empty"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>
+              <Glyphicon className="add_to_playlist_glyph" glyph="unchecked"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>
               </span> :
             <span>
               <Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>

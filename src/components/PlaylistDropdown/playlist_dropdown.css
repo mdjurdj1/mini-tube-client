@@ -4,7 +4,6 @@
   text-align: left;
   color: black;
   font-size: 105%;
-  font-weight: bold;
   margin-top: 1.3em;
   width: 100%;
 }
@@ -20,7 +19,6 @@ div#menu {
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-weight: bold;
   color: black;
-  /*text-shadow: 0 0 0.4em black, 0 0 0.4em black;*/
 }
 
 #add_this_video_to_a_playlist:hover {
@@ -83,7 +81,8 @@ hr.menu-item-divider {
 /*=======================================GLYPHICON STYLING*/
 
 .add_to_playlist_glyph {
-  font-size: 120%;
+  font-size: 110%;
+  color: rgba(0,0,0,.7);
 }
 
 .add_to_playlist_glyph:hover {
