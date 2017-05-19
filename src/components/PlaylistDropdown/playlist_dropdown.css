@@ -82,16 +82,16 @@ hr.menu-item-divider {
 
 .add_to_playlist_glyph {
   font-size: 110%;
-  color: rgba(0,0,0,.7);
+  color: rgba(0,0,0,.6);
 }
 
 .add_to_playlist_glyph:hover {
-  color: red;
+  color: black;
   cursor: pointer;
 }
 
 #plus {
-  color: #2B71C4;
+  color: rgba(0,0,0,.5);
   cursor: pointer;
 }
 
@@ -105,7 +105,7 @@ div#create_new_text {
 
 span#new_pl_text {
   text-align: left;
-  margin-left: 2.0em;
+  margin-left: 1em;
 }
 
 div.create_box_container {
