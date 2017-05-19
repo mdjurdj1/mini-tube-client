@@ -13,6 +13,7 @@ class PlaylistDropdown extends Component {
     super(props);
     this.toggleMenu = this.toggleMenu.bind(this);
     this.state = {
+      playlists: null,
       menuActive: false,
       createBoxActive: false
     };

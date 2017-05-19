@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { Glyphicon } from 'react-bootstrap'
+import Alert from 'react-s-alert';
 
 import {createPlaylistVideo, deleteVid} from '../../redux/modules/PlaylistVideos/actions'
 import './playlist_dropdown.css'
@@ -30,17 +31,36 @@ class DropdownItem extends Component {
     }
   }
 
+  showAddAlert() {
+    Alert.info('Added video to playlist!', {
+           position: 'bottom-left',
+           effect: 'slide',
+           onShow: function () {
+               console.log('Successfully added a video.')
+           },
+           beep: false,
+           timeout: 1000,
+           offset: 0
+       });
+  }
+
   render() {
     const p = this.props.playlist
     const index = this.props.key
     return (
       <li className="dropdown_li" key={index} onClick={(e)=>{this.handleClick(e, p)}}>
         { this.state.clicked === false ?
-            <span>
-              <Glyphicon className="add_to_playlist_glyph" glyph="unchecked"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>
+            <span onClick={this.showAddAlert}>
+              <Glyphicon
+                className="add_to_playlist_glyph"
+                glyph="unchecked"/> &nbsp;&nbsp;
+              <span className="li_text">{p.name}</span>
               </span> :
             <span>
-              <Glyphicon className="add_to_playlist_glyph" glyph="check"/>&nbsp;&nbsp; <span className="li_text">{p.name}</span>
+              <Glyphicon
+                className="add_to_playlist_glyph"
+                glyph="check"/> &nbsp;&nbsp;
+              <span className="li_text">{p.name}</span>
             </span>
            }
       </li>
