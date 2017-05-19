@@ -29,6 +29,10 @@ hr.playlist_divider {
   color: #45ADE9
 }
 
+.playlist_div a {
+    text-decoration: none;
+}
+
 .playlist_delete_glyph {
   float: right;
   cursor: pointer;
