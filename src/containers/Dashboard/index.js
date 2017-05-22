@@ -12,7 +12,10 @@ class Dashboard extends Component {
         <div className="banner">
           <Row>
             <Col xs={12} md={12} id="bufferCol">
-                <h1 id="dashboard_h1"><span id="welcome">Welcome  </span><span id="dash_username">{this.props.username}!</span></h1>
+                <h1 id="dashboard_h1">
+                  <span id="welcome">Welcome  </span>
+                  <span id="dash_username">{this.props.username}!</span><
+                /h1>
             </Col>
           </Row>
         </div>
