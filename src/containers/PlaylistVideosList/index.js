@@ -29,7 +29,7 @@ class PlaylistsVideoList extends Component {
           <Col md={6} lg={6} mdOffset={3}>
               <Video key={index} video={video} videoId={video.videoId}/>
               <div className="playlist_video_info">
-                <h1 id="vidName" onClick={e=>this.handleClick(e, video)}>{video.name}</h1>
+                <h1 className="vidName">{video.name}</h1>
                 <Glyphicon
                   onClick={() => this.handleDelete(video.id)}
                   glyph="remove" className='playlist_video_delete_glyph'

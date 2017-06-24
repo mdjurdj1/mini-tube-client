@@ -1,4 +1,4 @@
-h1#vidName {
+h1.vidName {
   float:left;
   font-family: ‘Arial Black’, Gadget, sans-serif;
   font-size: 170%;
@@ -41,4 +41,11 @@ div.playlist_video_info {
   border-top: none;
   background-color: #EDF5FF;
   box-shadow: 5px 20px 45px rgba(0,0,0,.45);
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  h1.vidName{
+    font-size: 1.2em;
+  }
 }
